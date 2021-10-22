@@ -42,7 +42,7 @@ module.exports = {
           entryPoints: [
             {
               html: "./src/renderer/index.html",
-              js: "./src/renderer.ts",
+              js: "./src/renderer.tsx",
               name: "main_window",
               preload: {
                 js: "./src/preload.ts",
