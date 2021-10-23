@@ -10,7 +10,7 @@ const components: {[name: string]: JSX.Element} = {
     'settings': <Settings />
 }
 
-const MainView = ({ view }: MainViewProps) => {;
+const MainView = ({ view }: MainViewProps) => {
     return components[view];
 };
 
