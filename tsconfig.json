@@ -15,7 +15,8 @@
     "paths": {
       "*": ["node_modules/*"],
       "@/*": ["./src/*"],
-      "@components/*": ["src/renderer/Components/*"]
+      "@components/*": ["src/renderer/Components/*"],
+      "@interfaces/*": ["src/renderer/Interfaces/*"],
     }
   },
   "include": ["src/**/*"]

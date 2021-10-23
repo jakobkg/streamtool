@@ -1,34 +1,12 @@
-import { FaFire } from 'react-icons/fa'
-import React from 'react'
+import { FaCog, FaHome } from 'react-icons/fa';
+import SidebarIcon from './SidebarIcon';
+import SidebarProps from '@interfaces/SidebarProps';
 
-interface SidebarProps {
-    clickState: boolean;
-    clickCallback: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export default function Sidebar({clickState, clickCallback}: SidebarProps) {
+export default function Sidebar({currentView, clickCallback}: SidebarProps) {
     return (
         <div className="sidebar-container">
-            <SidebarIcon icon={<FaFire size="28" />} tooltip="Ta-da 🎉" clickState={clickState} clickCallback={clickCallback} />
+            <SidebarIcon icon={<FaHome size="28" />} target='front' currentView={currentView} clickCallback={clickCallback} />
+            <SidebarIcon icon={<FaCog size="28" />} target='settings' currentView={currentView} clickCallback={clickCallback} />
         </div>
-    )
-}
-
-interface SidebarIconProps {
-    icon: React.ReactElement;
-    clickState: boolean;
-    clickCallback: React.Dispatch<React.SetStateAction<boolean>>;
-    tooltip?: string;
-}
-
-function SidebarIcon({icon, clickState, clickCallback, tooltip = 'Tooltip'}: SidebarIconProps) {
-    return (
-        <button className='sidebar-icon group'onClick={() => clickCallback(!clickState)}>
-            {icon}
-
-            <span className='sidebar-tooltip group-hover:scale-100'>
-                {tooltip}
-            </span>
-        </button>
     )
 }

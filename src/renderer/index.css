@@ -11,10 +11,14 @@
     @apply relative flex items-center justify-center
     h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
     bg-gray-500 text-green-500
-    hover:bg-green-600 hover:text-white
+    hover:bg-green-500 hover:text-white
     rounded-3xl hover:rounded-md
-    transition-all duration-300 ease-linear
+    transition-all duration-150 ease-linear
     cursor-pointer;
+  }
+
+  .sidebar-icon-active {
+    @apply rounded-xl bg-green-600 text-white drop-shadow-xl;
   }
 
   .sidebar-tooltip {
@@ -26,9 +30,8 @@
   }
 
   .mainview-container {
-    @apply fixed left-16 h-screen w-full
-    bg-gray-700 text-white
-    text-center justify-center text-4xl font-mono font-bold
+    @apply fixed left-16 h-screen w-full pl-3 pt-2
+    bg-gray-700 text-white text-4xl font-bold
     rounded-l-xl;
   }
 }

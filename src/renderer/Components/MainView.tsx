@@ -1,13 +1,17 @@
+import Front from './Front';
+import Settings from './Settings';
+
 interface MainViewProps {
-    text: string;
+    view: string;
 }
 
-const MainView = ({ text }: MainViewProps) => {
-    return (
-        <div className='mainview-container'>
-            {text}
-        </div>
-    )
+const components: {[name: string]: JSX.Element} = {
+    'front': <Front />,
+    'settings': <Settings />
+}
+
+const MainView = ({ view }: MainViewProps) => {;
+    return components[view];
 };
 
 export default MainView;
