@@ -10,5 +10,7 @@ module.exports = {
       scale: ['group-hover'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 };

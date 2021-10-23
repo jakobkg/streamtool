@@ -3,11 +3,11 @@
 @import "tailwindcss/utilities";
 
 @layer components {
-  .sidebar-container {
+  .button-module-container {
     @apply fixed top-0 right-0 h-16 w-16 rounded-bl-lg
     flex flex-row bg-gray-800 text-white shadow-lg;
   }
-  .sidebar-icon {
+  .icon-button {
     @apply relative flex items-center justify-center
     h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
     bg-gray-500 hover:bg-gray-400 hover:text-white
@@ -16,7 +16,7 @@
     cursor-pointer;
   }
 
-  .sidebar-icon-active {
+  .icon-button-active {
     @apply rounded-xl bg-green-600 text-white drop-shadow-xl;
   }
 
@@ -31,5 +31,6 @@
   .mainview-container {
     @apply fixed h-screen w-screen px-6 py-6
     bg-gray-700 text-white text-4xl font-bold;
+    user-select: none;
   }
 }
