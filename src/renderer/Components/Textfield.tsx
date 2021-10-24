@@ -11,7 +11,7 @@ const Textfield = ({data, setterCallback, className, description}: TextfieldProp
     return (
         <div className={'flex flex-col '.concat(className ? className : '')}>
             <p className='text-xs'>{description}</p>
-            <input type='text' className='text-black'
+            <input type='text' className='text-black' spellCheck='false'
             value={data}
             onChange={e => setterCallback(e.target.value)}></input>
         </div>

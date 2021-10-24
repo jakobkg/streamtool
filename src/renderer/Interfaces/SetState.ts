@@ -7,4 +7,6 @@ export default interface SetState {
     setScores: React.Dispatch<React.SetStateAction<number>>[];
     matchLength: number;
     setMatchLength: React.Dispatch<React.SetStateAction<number>>;
+    round: string;
+    setRound: React.Dispatch<React.SetStateAction<string>>;
 }

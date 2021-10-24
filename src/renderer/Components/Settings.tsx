@@ -1,7 +1,7 @@
 const Settings = () => {
     return (
         <div className='mainview-container'>
-            Innstillinger
+            Settings
         </div>
     )
 };

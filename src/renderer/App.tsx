@@ -17,6 +17,7 @@ export default function App() {
   const [p2Score, setP2Score] = useState(0);
 
   const [matchLength, setMatchLength] = useState(3);
+  const [round, setRound] = useState('');
 
   const state: SetState = {
     teams: [p1Team, p2Team],
@@ -27,10 +28,12 @@ export default function App() {
     setScores: [setP1Score, setP2Score],
     matchLength: matchLength,
     setMatchLength: setMatchLength,
+    round: round,
+    setRound: setRound,
   }
 
   return (
-    <div className="flex flex-row bg-gray-800 w-screen h-screen">
+    <div className='app'>
       <AppView view={view} state={state} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>

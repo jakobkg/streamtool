@@ -3,13 +3,20 @@
 @import "tailwindcss/utilities";
 
 @layer components {
+  .app {
+    @apply flex flex-row dark:bg-gray-800 w-screen h-screen;
+    user-select: none;
+  }
+
   .button-module-container {
     @apply fixed top-0 right-0 h-16 w-16 rounded-bl-lg
-    flex flex-row bg-gray-800 text-white shadow-lg;
+    flex flex-row
+    bg-gray-300 dark:bg-gray-800 dark:text-white shadow-lg;
   }
   .icon-button {
     @apply relative flex items-center justify-center
     h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
+    text-white dark:text-black
     bg-gray-500 hover:bg-gray-400 hover:text-white
     rounded-3xl hover:rounded-md
     transition-all duration-150 ease-linear
@@ -20,18 +27,9 @@
     @apply rounded-xl bg-green-600 text-white drop-shadow-xl;
   }
 
-  .sidebar-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14
-    rounded-md shadow-md
-    text-white bg-gray-900
-    text-sm font-bold transform
-    transition-all duration-200 scale-0 origin-left;
-  }
-
-  .mainview-container {
+  .appview-container {
     @apply fixed h-screen w-screen px-6 py-6
-    bg-gray-700 text-white text-4xl font-bold;
-    user-select: none;
+    bg-gray-100 text-black dark:bg-gray-700 dark:text-white;
   }
 
   .scoreboard-container {
@@ -47,7 +45,7 @@
   }
 
   .score-reset-button {
-     @apply bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
+     @apply dark:bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
   }
 
   .scoreboardcontrolpanel {
@@ -55,6 +53,6 @@
   }
 
   .scoreboardcontrolpanel-button {
-    @apply bg-gray-800 w-1/3 rounded-md cursor-pointer;
+    @apply dark:bg-gray-800 w-1/3 rounded-md cursor-pointer;
   }
 }

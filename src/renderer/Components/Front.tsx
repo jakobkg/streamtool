@@ -8,7 +8,10 @@ interface FrontProps {
 
 const Front = ({state}: FrontProps) => {
     return (
-        <div className='mainview-container'>
+        <div className='appview-container'>
+            <Textfield description='Round' className='w-48 absolute top-1/5 left-1/2 transform -translate-x-1/2 text-center'
+                       data={state.round} setterCallback={state.setRound} />
+
             <Textfield description='P1 team' className='w-28 absolute bottom-1/2'
                        data={state.teams[0]} setterCallback={state.setTeams[0]} />
 
