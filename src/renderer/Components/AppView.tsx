@@ -3,12 +3,12 @@ import Settings from './Settings';
 
 import SetState from '@interfaces/SetState';
 
-interface MainViewProps {
+interface AppViewProps {
     view: string;
     state: SetState;
 }
 
-const MainView = ({ view, state }: MainViewProps) => {
+const AppView = ({ view, state }: AppViewProps) => {
     switch (view) {
         case 'front':
             return <Front state={state} />;
@@ -21,4 +21,4 @@ const MainView = ({ view, state }: MainViewProps) => {
     }
 };
 
-export default MainView;
+export default AppView;

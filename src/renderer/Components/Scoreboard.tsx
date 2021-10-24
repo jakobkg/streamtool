@@ -1,7 +1,6 @@
 import React from "react";
 import Score from './Score';
-import ScoreResetButton from './ScoreResetButton';
-import MatchLengthToggle from './MatchLengthToggle';
+import ScoreboardControlpanel from './ScoreboardControlpanel';
 
 interface ScoreboardProps {
     scores: number[];
@@ -13,13 +12,12 @@ interface ScoreboardProps {
 const Scoreboard = ({ scores, setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardProps) => {
     return (
     <div className='scoreboard-container'>
-        <MatchLengthToggle matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
         <div className='scores-container'>  
             <Score score={scores[0]} updateScoreCallback={setScoresCallbacks[0]} matchLength={matchLength} />
             -
             <Score score={scores[1]} updateScoreCallback={setScoresCallbacks[1]} matchLength={matchLength} />
     </div>
-    <ScoreResetButton setScoresCallbacks={setScoresCallbacks} />
+    <ScoreboardControlpanel setScoresCallbacks={setScoresCallbacks} matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
     </div>
     )
 }
