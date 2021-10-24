@@ -1,11 +1,11 @@
 import Front from './Front';
 import Settings from './Settings';
 
-import PlayerState from '@interfaces/PlayerState';
+import SetState from '@interfaces/SetState';
 
 interface MainViewProps {
     view: string;
-    state: PlayerState;
+    state: SetState;
 }
 
 const MainView = ({ view, state }: MainViewProps) => {

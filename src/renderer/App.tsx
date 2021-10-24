@@ -3,15 +3,7 @@ import MainView from "./Components/MainView";
 
 import { useState } from "react";
 import ButtonModule from "./Components/ButtonModule";
-
-interface playerState {
-  teams: string[];
-  setTeams: React.Dispatch<React.SetStateAction<string>>[];
-  tags: string[];
-  setTags: React.Dispatch<React.SetStateAction<string>>[];
-  scores: number[];
-  setScores: React.Dispatch<React.SetStateAction<number>>[];
-}
+import SetState from "./Interfaces/SetState";
 
 export default function App() {
   const [view, setView] = useState('front');
@@ -24,13 +16,17 @@ export default function App() {
   const [p2Tag, setP2Tag] = useState('');
   const [p2Score, setP2Score] = useState(0);
 
-  const state: playerState = {
+  const [matchLength, setMatchLength] = useState(3);
+
+  const state: SetState = {
     teams: [p1Team, p2Team],
     setTeams: [setP1Team, setP2Team],
     tags: [p1Tag, p2Tag],
     setTags: [setP1Tag, setP2Tag],
     scores: [p1Score, p2Score],
-    setScores: [setP1Score, setP2Score]
+    setScores: [setP1Score, setP2Score],
+    matchLength: matchLength,
+    setMatchLength: setMatchLength,
   }
 
   return (
