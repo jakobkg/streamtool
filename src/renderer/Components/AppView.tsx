@@ -14,7 +14,7 @@ const AppView = ({ view, state }: AppViewProps) => {
             return <Front state={state} />;
             
         case 'settings':
-            return <Settings />;
+            return <Settings state={state.darkmode} setStateCallback={state.setDarkmode} />;
         
         default:
             return <></>

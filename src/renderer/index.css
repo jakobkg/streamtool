@@ -16,8 +16,7 @@
   .icon-button {
     @apply relative flex items-center justify-center
     h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
-    text-white dark:text-black
-    bg-gray-500 hover:bg-gray-400 hover:text-white
+    text-white bg-gray-500 hover:bg-gray-400 hover:text-white
     rounded-3xl hover:rounded-md
     transition-all duration-150 ease-linear
     cursor-pointer;
@@ -33,7 +32,7 @@
   }
 
   .scoreboard-container {
-    @apply font-mono text-8xl flex flex-col items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    @apply font-mono font-bold text-8xl flex flex-col items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
   }
 
   .scores-container {

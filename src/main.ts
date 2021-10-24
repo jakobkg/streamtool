@@ -33,7 +33,7 @@ const createStores = (): void => {
 
 const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
-    height: 720,
+    height: 420,
     width: 1280,
     autoHideMenuBar: true,
     webPreferences: {

@@ -1,3 +1,5 @@
+import React from "react";
+
 export default interface SetState {
     teams: string[];
     setTeams: React.Dispatch<React.SetStateAction<string>>[];
@@ -9,4 +11,6 @@ export default interface SetState {
     setMatchLength: React.Dispatch<React.SetStateAction<number>>;
     round: string;
     setRound: React.Dispatch<React.SetStateAction<string>>;
+    darkmode: boolean;
+    setDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
 }

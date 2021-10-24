@@ -19,6 +19,8 @@ export default function App() {
   const [matchLength, setMatchLength] = useState(3);
   const [round, setRound] = useState('');
 
+  const [darkmode, setDarkmode] = useState(true);
+
   const state: SetState = {
     teams: [p1Team, p2Team],
     setTeams: [setP1Team, setP2Team],
@@ -30,10 +32,12 @@ export default function App() {
     setMatchLength: setMatchLength,
     round: round,
     setRound: setRound,
+    darkmode: darkmode,
+    setDarkmode: setDarkmode,
   }
 
   return (
-    <div className='app'>
+    <div className={'app'.concat(darkmode ? ' dark' : '')}>
       <AppView view={view} state={state} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>
