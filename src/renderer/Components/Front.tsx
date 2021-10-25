@@ -1,9 +1,9 @@
 import Textfield from './Textfield';
-import SetState from '@interfaces/SetState';
+import MatchState from '@interfaces/MatchState';
 import Scoreboard from './Scoreboard';
 
 interface FrontProps {
-    state: SetState;
+    state: MatchState;
 }
 
 const Front = ({state}: FrontProps) => {

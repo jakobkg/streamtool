@@ -3,7 +3,7 @@ import AppView from "./Components/AppView";
 
 import { useState } from "react";
 import ButtonModule from "./Components/ButtonModule";
-import SetState from "./Interfaces/SetState";
+import MatchState from "./Interfaces/MatchState";
 
 export default function App() {
   const [view, setView] = useState('front');
@@ -21,7 +21,7 @@ export default function App() {
 
   const [darkmode, setDarkmode] = useState(true);
 
-  const state: SetState = {
+  const state: MatchState = {
     teams: [p1Team, p2Team],
     setTeams: [setP1Team, setP2Team],
     tags: [p1Tag, p2Tag],

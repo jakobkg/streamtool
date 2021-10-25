@@ -1,11 +1,11 @@
 import Front from './Front';
 import Settings from './Settings';
 
-import SetState from '@interfaces/SetState';
+import MatchState from '@interfaces/MatchState';
 
 interface AppViewProps {
     view: string;
-    state: SetState;
+    state: MatchState;
 }
 
 const AppView = ({ view, state }: AppViewProps) => {
