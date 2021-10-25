@@ -16,7 +16,7 @@ const AppView = ({ view, matchState, appState }: AppViewProps) => {
             return <ScoreboardView matchState={matchState} />;
             
         case 'settings':
-            return <SettingsView appState={appState} />;
+            return <SettingsView appConfig={appState} />;
         
         default:
             return <></>

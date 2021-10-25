@@ -27,7 +27,7 @@
   }
 
   .appview-container {
-    @apply fixed h-screen w-screen px-6 py-6
+    @apply fixed h-screen w-screen p-6
     bg-gray-100 text-black dark:bg-gray-700 dark:text-white;
   }
 
@@ -55,8 +55,21 @@
     @apply bg-gray-800 w-1/3 rounded-md cursor-pointer;
   }
 
+  .sidebar-container {
+    @apply fixed top-0 left-0 h-screen w-16 flex flex-col
+    bg-white dark:bg-gray-900 shadow-lg;
+  }
+
+  .settings-page {
+    @apply fixed left-16 pl-3 w-full;
+  }
+
   .settings-entry {
     @apply flex flex-row gap-2
     text-base font-semibold;
+  }
+
+  h1 {
+    @apply text-3xl font-bold;
   }
 }

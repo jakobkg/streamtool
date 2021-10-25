@@ -1,15 +1,19 @@
 import React from "react";
 import AppState from '@interfaces/AppState';
-import BooleanSetting from './BooleanSetting';
+import DynamicSettingsPage from "./DynamicSettingsPage";
+import Sidebar from './Sidebar';
 
 interface SettingsViewProps {
-    appState: AppState;
+    appConfig: AppState;
 }
 
-const SettingsView = ({appState}: SettingsViewProps) => {
+const SettingsView = ({appConfig}: SettingsViewProps) => {
+    const [page, setPage] = React.useState('ui');
+
     return (
         <div className='appview-container'>
-            <BooleanSetting name='Dark mode' value={appState.darkmode} setValueCallback={appState.setDarkmode} />
+            <Sidebar page={page} setPageCallback={setPage} />
+            <DynamicSettingsPage page={page} config={appConfig} />
         </div>
     )
 };
