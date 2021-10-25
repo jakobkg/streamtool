@@ -1,4 +1,4 @@
-export default interface SidebarIconProps {
+export default interface IconButtonProps {
     icon: React.ReactElement;
     currentView: string;
     clickCallback: React.Dispatch<React.SetStateAction<string>>;

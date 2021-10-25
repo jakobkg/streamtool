@@ -1,12 +1,12 @@
-import Sidebar from "./Components/ButtonModule";
-import AppView from "./Components/AppView";
-
 import { useState } from "react";
-import ButtonModule from "./Components/ButtonModule";
-import MatchState from "./Interfaces/MatchState";
+
+import AppView from "./Components/Common/AppView";
+import ButtonModule from "./Components/Common/ButtonModule";
+import MatchState from '@interfaces/MatchState';
+import AppState from '@interfaces/AppState';
 
 export default function App() {
-  const [view, setView] = useState('scoreboard');
+  const [view, setView] = useState('settings');
   
   const [p1Team, setP1Team] = useState('');
   const [p1Tag, setP1Tag] = useState('');
@@ -21,7 +21,7 @@ export default function App() {
 
   const [darkmode, setDarkmode] = useState(true);
 
-  const state: MatchState = {
+  const matchState: MatchState = {
     teams: [p1Team, p2Team],
     setTeams: [setP1Team, setP2Team],
     tags: [p1Tag, p2Tag],
@@ -32,13 +32,16 @@ export default function App() {
     setMatchLength: setMatchLength,
     round: round,
     setRound: setRound,
+  }
+
+  const appState: AppState = {
     darkmode: darkmode,
     setDarkmode: setDarkmode,
   }
 
   return (
     <div className={'app'.concat(darkmode ? ' dark' : '')}>
-      <AppView view={view} state={state} />
+      <AppView view={view} matchState={matchState} appState={appState} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>
   )

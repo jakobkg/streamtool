@@ -44,7 +44,7 @@
   }
 
   .score-reset-button {
-     @apply dark:bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
+     @apply bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
   }
 
   .scoreboardcontrolpanel {
@@ -52,6 +52,11 @@
   }
 
   .scoreboardcontrolpanel-button {
-    @apply dark:bg-gray-800 w-1/3 rounded-md cursor-pointer;
+    @apply bg-gray-800 w-1/3 rounded-md cursor-pointer;
+  }
+
+  .settings-entry {
+    @apply flex flex-row gap-2
+    text-base font-semibold;
   }
 }

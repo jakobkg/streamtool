@@ -11,6 +11,4 @@ export default interface MatchState {
     setMatchLength: React.Dispatch<React.SetStateAction<number>>;
     round: string;
     setRound: React.Dispatch<React.SetStateAction<string>>;
-    darkmode: boolean;
-    setDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
 }
