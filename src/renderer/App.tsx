@@ -6,7 +6,7 @@ import ButtonModule from "./Components/ButtonModule";
 import MatchState from "./Interfaces/MatchState";
 
 export default function App() {
-  const [view, setView] = useState('front');
+  const [view, setView] = useState('scoreboard');
   
   const [p1Team, setP1Team] = useState('');
   const [p1Tag, setP1Tag] = useState('');

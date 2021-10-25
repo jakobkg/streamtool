@@ -1,4 +1,4 @@
-import Front from './Front';
+import ScoreboardView from './ScoreboardView';
 import Settings from './Settings';
 
 import MatchState from '@interfaces/MatchState';
@@ -10,8 +10,8 @@ interface AppViewProps {
 
 const AppView = ({ view, state }: AppViewProps) => {
     switch (view) {
-        case 'front':
-            return <Front state={state} />;
+        case 'scoreboard':
+            return <ScoreboardView state={state} />;
             
         case 'settings':
             return <Settings state={state.darkmode} setStateCallback={state.setDarkmode} />;

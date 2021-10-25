@@ -7,9 +7,9 @@ export default function ButtonModule({currentView, clickCallback}: ButtonModuleP
     return (
         <div className="button-module-container">
             {
-                currentView == 'front' ?
+                currentView == 'scoreboard' ?
                 <IconButton icon={<FaCog size="28" />} target='settings' currentView={currentView} clickCallback={clickCallback} /> :
-                <IconButton icon={<BsArrowLeft size="28" />} target='front' currentView={currentView} clickCallback={clickCallback} />
+                <IconButton icon={<BsArrowLeft size="28" />} target='scoreboard' currentView={currentView} clickCallback={clickCallback} />
             }
         </div>
     )

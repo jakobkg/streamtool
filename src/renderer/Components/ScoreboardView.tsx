@@ -2,11 +2,11 @@ import Textfield from './Textfield';
 import MatchState from '@interfaces/MatchState';
 import Scoreboard from './Scoreboard';
 
-interface FrontProps {
+interface ScoreboardViewProps {
     state: MatchState;
 }
 
-const Front = ({state}: FrontProps) => {
+const ScoreboardView = ({state}: ScoreboardViewProps) => {
     return (
         <div className='appview-container'>
             <Textfield description='Round' className='w-48 absolute top-1/5 left-1/2 transform -translate-x-1/2 text-center'
@@ -30,4 +30,4 @@ const Front = ({state}: FrontProps) => {
     )
 };
 
-export default Front;
+export default ScoreboardView;
