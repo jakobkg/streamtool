@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import callbackBuilder from './Builders/configCallbackBuilder';
+
 import AppView from "./Components/Common/AppView";
 import ButtonModule from "./Components/Common/ButtonModule";
 import MatchState from '@interfaces/MatchState';
@@ -20,7 +22,16 @@ export default function App() {
   const [round, setRound] = useState('');
 
   const [darkmode, setDarkmode] = useState(true);
+  
   const [outputDir, setOutputDir] = useState('');
+  
+  window.store.get('ui.darkmode', true).then((value: boolean) => {
+    setDarkmode(value);
+  })
+  
+  window.store.get('obs.outputDir', '').then((value: string) => {
+    setOutputDir(value);
+  })
 
   const matchState: MatchState = {
     teams: [p1Team, p2Team],
@@ -38,16 +49,16 @@ export default function App() {
   const appConfig: AppConfig = {
     ui: {
       darkmode: darkmode,
-      setDarkmode: setDarkmode,
+      setDarkmode: callbackBuilder(setDarkmode, 'ui.darkmode'),
     },
     obs: {
       outputDir: outputDir,
-      setOutputDir: setOutputDir,
+      setOutputDir: callbackBuilder(setOutputDir, 'obs.outputDir'),
     }
   }
 
   return (
-    <div className={'app'.concat(darkmode ? ' dark' : '')}>
+    <div className={'app'.concat(appConfig.ui.darkmode ? ' dark' : '')}>
       <AppView view={view} matchState={matchState} appConfig={appConfig} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>
