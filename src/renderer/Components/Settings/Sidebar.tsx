@@ -10,8 +10,8 @@ interface SidebarProps {
 const Sidebar = ({page, setPageCallback}: SidebarProps) => {
     return (
         <div className="sidebar-container">
-            <IconButton icon={<BsWindowSidebar size='28' />} currentView={page} target='ui' clickCallback={setPageCallback} />
-            <IconButton icon={<SiObsstudio size='28' />} currentView={page} target='obs' clickCallback={setPageCallback} />
+            <IconButton icon={<BsWindowSidebar size='28' />} currentView={page} target='ui' clickCallback={setPageCallback} tooltip='Interface' />
+            <IconButton icon={<SiObsstudio size='28' />} currentView={page} target='obs' clickCallback={setPageCallback} tooltip='OBS' />
         </div>
     );
 };

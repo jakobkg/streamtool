@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain } from "electron";
+import { app, BrowserWindow, dialog, ipcMain } from "electron";
 
 ipcMain.on("quit-app", () => {
   app.quit();
@@ -23,3 +23,8 @@ ipcMain.on("relaunch-app", () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them in main.ts.
+
+ipcMain.handle('select-dir', async (event) => {
+  const result = await dialog.showOpenDialog(BrowserWindow.getAllWindows()[0], { properties: ['openDirectory', 'promptToCreate'] });
+  return result.filePaths;
+})

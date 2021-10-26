@@ -16,8 +16,22 @@
   .icon-button {
     @apply relative flex items-center justify-center
     h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
-    text-white bg-gray-500 hover:bg-gray-400 hover:text-white
+    text-white bg-gray-500 hover:bg-gray-400
     rounded-3xl hover:rounded-md
+    transition-all duration-150 ease-linear
+    cursor-pointer;
+  }
+
+  .icon-button-tooltip {
+    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
+    text-white bg-gray-900 
+    text-xs font-bold
+    transform transition-all duration-100 scale-0 origin-left;
+  }
+
+  .button {
+    @apply shadow-lg rounded-md px-1
+    text-white bg-gray-500 hover:bg-gray-400
     transition-all duration-150 ease-linear
     cursor-pointer;
   }
@@ -70,6 +84,6 @@
   }
 
   h1 {
-    @apply text-3xl font-bold;
+    @apply text-4xl font-bold;
   }
 }

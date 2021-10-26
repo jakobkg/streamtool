@@ -7,7 +7,7 @@
  * https://electronjs.org/docs/tutorial/application-architecture#main-and-renderer-processes
  */
 
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, dialog, ipcMain } from "electron";
 import isDev from "electron-is-dev";
 import Store from "electron-persist-secure/lib/store";
 // Import all IPCs to make sure they register their respective listeners

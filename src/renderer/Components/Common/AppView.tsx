@@ -2,15 +2,15 @@ import ScoreboardView from '../Scoreboard/ScoreboardView';
 import SettingsView from '../Settings/SettingsView';
 
 import MatchState from '@interfaces/MatchState';
-import AppState from '@interfaces/AppState';
+import AppConfig from '@interfaces/AppConfig';
 
 interface AppViewProps {
     view: string;
     matchState: MatchState;
-    appState: AppState;
+    appConfig: AppConfig;
 }
 
-const AppView = ({ view, matchState, appState }: AppViewProps) => {
+const AppView = ({ view, matchState, appConfig: appState }: AppViewProps) => {
     switch (view) {
         case 'scoreboard':
             return <ScoreboardView matchState={matchState} />;

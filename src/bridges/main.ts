@@ -33,6 +33,11 @@ export const electronBridge = {
   openPath: async (path: string): Promise<string> => {
     return await shell.openPath(path);
   },
+
+  openDirSelectDialog: async (): Promise<string[]> => {
+    const result: string[] = await ipcRenderer.invoke('select-dir');
+    return result;
+  }
 };
 
 contextBridge.exposeInMainWorld("electron", electronBridge);

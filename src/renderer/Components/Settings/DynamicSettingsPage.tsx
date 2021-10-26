@@ -1,10 +1,10 @@
-import AppState from "@interfaces/AppState";
+import AppConfig from "@interfaces/AppConfig";
 import UISettingsPage from './UISettingsPage';
 import OBSSettingsPage from './OBSSettingsPage';
 
 interface DynamicSettingsPageProps {
     page: string;
-    config: AppState;
+    config: AppConfig;
 }
 
 const DynamicSettingsPage = ({ page, config }: DynamicSettingsPageProps) => {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import AppView from "./Components/Common/AppView";
 import ButtonModule from "./Components/Common/ButtonModule";
 import MatchState from '@interfaces/MatchState';
-import AppState from '@interfaces/AppState';
+import AppConfig from '@interfaces/AppConfig';
 
 export default function App() {
   const [view, setView] = useState('settings');
@@ -20,6 +20,7 @@ export default function App() {
   const [round, setRound] = useState('');
 
   const [darkmode, setDarkmode] = useState(true);
+  const [outputDir, setOutputDir] = useState('');
 
   const matchState: MatchState = {
     teams: [p1Team, p2Team],
@@ -34,14 +35,20 @@ export default function App() {
     setRound: setRound,
   }
 
-  const appState: AppState = {
-    darkmode: darkmode,
-    setDarkmode: setDarkmode,
+  const appConfig: AppConfig = {
+    ui: {
+      darkmode: darkmode,
+      setDarkmode: setDarkmode,
+    },
+    obs: {
+      outputDir: outputDir,
+      setOutputDir: setOutputDir,
+    }
   }
 
   return (
     <div className={'app'.concat(darkmode ? ' dark' : '')}>
-      <AppView view={view} matchState={matchState} appState={appState} />
+      <AppView view={view} matchState={matchState} appConfig={appConfig} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>
   )
