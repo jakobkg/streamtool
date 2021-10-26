@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import callbackBuilder from './Builders/configCallbackBuilder';
+import { configCallbackBuilder } from './Builders/configCallbackBuilder';
+import { stateCallbackBuilder } from "./Builders/stateCallbackBuilder";
 
 import AppView from "./Components/Common/AppView";
 import ButtonModule from "./Components/Common/ButtonModule";
@@ -8,22 +9,41 @@ import MatchState from '@interfaces/MatchState';
 import AppConfig from '@interfaces/AppConfig';
 
 export default function App() {
-  const [view, setView] = useState('settings');
-  
-  const [p1Team, setP1Team] = useState('');
-  const [p1Tag, setP1Tag] = useState('');
-  const [p1Score, setP1Score] = useState(0);
-
-  const [p2Team, setP2Team] = useState('');
-  const [p2Tag, setP2Tag] = useState('');
-  const [p2Score, setP2Score] = useState(0);
-
-  const [matchLength, setMatchLength] = useState(3);
-  const [round, setRound] = useState('');
-
   const [darkmode, setDarkmode] = useState(true);
   
   const [outputDir, setOutputDir] = useState('');
+
+  const appConfig: AppConfig = {
+    ui: {
+      darkmode: darkmode,
+      setDarkmode: configCallbackBuilder(setDarkmode, 'ui.darkmode'),
+    },
+    obs: {
+      outputDir: outputDir,
+      setOutputDir: configCallbackBuilder(setOutputDir, 'obs.outputDir'),
+    }
+  }
+
+  const [view, setView] = useState('scoreboard');
+  
+  const [p1Team, setP1Team] = useState('');
+  const setP1TeamCallback = stateCallbackBuilder(setP1Team, appConfig.obs.outputDir.concat('/team1.txt'));
+  const [p1Tag, setP1Tag] = useState('');
+  const setP1TagCallback = stateCallbackBuilder(setP1Tag, appConfig.obs.outputDir.concat('/player1.txt'));
+  const [p1Score, setP1Score] = useState(0);
+  const setP1ScoreCallback = stateCallbackBuilder(setP1Score, appConfig.obs.outputDir.concat('/score1.txt'));
+
+  const [p2Team, setP2Team] = useState('');
+  const setP2TeamCallback = stateCallbackBuilder(setP2Team, appConfig.obs.outputDir.concat('/team2.txt'));
+  const [p2Tag, setP2Tag] = useState('');
+  const setP2TagCallback = stateCallbackBuilder(setP2Tag, appConfig.obs.outputDir.concat('/player2.txt'));
+  const [p2Score, setP2Score] = useState(0);
+  const setP2ScoreCallback = stateCallbackBuilder(setP2Score, appConfig.obs.outputDir.concat('/score2.txt'));
+
+  const [matchLength, setMatchLength] = useState(3);
+  const setMatchLengthCallback = stateCallbackBuilder(setMatchLength, appConfig.obs.outputDir.concat('/bestof.txt'));
+  const [round, setRound] = useState('');
+  const setRoundCallback = stateCallbackBuilder(setRound, appConfig.obs.outputDir.concat('/round.txt'));
   
   window.store.get('ui.darkmode', true).then((value: boolean) => {
     setDarkmode(value);
@@ -35,26 +55,15 @@ export default function App() {
 
   const matchState: MatchState = {
     teams: [p1Team, p2Team],
-    setTeams: [setP1Team, setP2Team],
+    setTeams: [setP1TeamCallback, setP2TeamCallback],
     tags: [p1Tag, p2Tag],
-    setTags: [setP1Tag, setP2Tag],
+    setTags: [setP1TagCallback, setP2TagCallback],
     scores: [p1Score, p2Score],
-    setScores: [setP1Score, setP2Score],
+    setScores: [setP1ScoreCallback, setP2ScoreCallback],
     matchLength: matchLength,
-    setMatchLength: setMatchLength,
+    setMatchLength: setMatchLengthCallback,
     round: round,
-    setRound: setRound,
-  }
-
-  const appConfig: AppConfig = {
-    ui: {
-      darkmode: darkmode,
-      setDarkmode: callbackBuilder(setDarkmode, 'ui.darkmode'),
-    },
-    obs: {
-      outputDir: outputDir,
-      setOutputDir: callbackBuilder(setOutputDir, 'obs.outputDir'),
-    }
+    setRound: setRoundCallback,
   }
 
   return (

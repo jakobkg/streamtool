@@ -37,6 +37,11 @@ export const electronBridge = {
   openDirSelectDialog: async (): Promise<string[]> => {
     const result: string[] = await ipcRenderer.invoke('select-dir'); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
     return result;
+  },
+
+  saveFile: async (filename: string, contents: string): Promise<boolean> => {
+    const result: boolean = await ipcRenderer.invoke('save-file', filename, contents);
+    return result
   }
 };
 

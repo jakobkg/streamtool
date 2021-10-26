@@ -1,10 +1,10 @@
 export default interface AppConfig {
     ui: {
         darkmode: boolean;
-        setDarkmode: React.Dispatch<React.SetStateAction<boolean>>;
+        setDarkmode: (value: boolean) => void;
     };
     obs: {
         outputDir: string;
-        setOutputDir: React.Dispatch<React.SetStateAction<string>>
+        setOutputDir: (value: string) => void;
     }
 }

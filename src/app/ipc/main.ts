@@ -23,8 +23,3 @@ ipcMain.on("relaunch-app", () => {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them in main.ts.
-
-ipcMain.handle('select-dir', async () => {
-  const result = await dialog.showOpenDialog(BrowserWindow.getAllWindows()[0], { properties: ['openDirectory', 'promptToCreate'] });
-  return result.filePaths;
-})
