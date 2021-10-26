@@ -1,7 +1,7 @@
 {
   "name": "streamtool",
   "productName": "streamtool",
-  "version": "1.3.0",
+  "version": "0.1.0",
   "description": "Smash Bros streaming tool",
   "main": ".webpack/main",
   "scripts": {
