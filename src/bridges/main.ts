@@ -35,14 +35,14 @@ export const electronBridge = {
   },
 
   openDirSelectDialog: async (): Promise<string[]> => {
-    const result: string[] = await ipcRenderer.invoke('select-dir');
+    const result: string[] = await ipcRenderer.invoke('select-dir'); // eslint-disable-line @typescript-eslint/no-unsafe-assignment
     return result;
   }
 };
 
 contextBridge.exposeInMainWorld("electron", electronBridge);
 
-export const storeBridge = createStoreBindings("config"); // "config" = the stores name
+export const storeBridge = createStoreBindings("config");
 
 contextBridge.exposeInMainWorld("store", {
   ...storeBridge,
