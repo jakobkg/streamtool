@@ -14,5 +14,5 @@ export function UISettingsPage({ config }: UISettingsPageProps): JSX.Element {
                 <BooleanSetting name='Dark mode' value={config.ui.darkmode} setValueCallback={config.ui.setDarkmode} />
             </div>
         </div>
-    )
+    );
 }

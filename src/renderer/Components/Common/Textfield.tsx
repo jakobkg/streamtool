@@ -13,5 +13,5 @@ export function Textfield({data, setterCallback, className, description}: Textfi
             value={data}
             onChange={e => setterCallback(e.target.value)}></input>
         </div>
-    )
+    );
 }

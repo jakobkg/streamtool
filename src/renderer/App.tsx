@@ -23,12 +23,11 @@ export default function App(): JSX.Element {
     window.electron.getHomeDir().then((homedir)=> {
       window.store.get('obs.outputDir', homedir.concat('/scoreboard')).then((value: string) => {
       setOutputDir(value);
-      }).catch(() => {return;})
+      }).catch(() => {return;});
     }).catch(() => {
       alert('Unable to find home directory, please set this in the settings.');
-    })
-    
-  })
+    });
+  });
 
   const appConfig: AppConfig = {
     ui: {
@@ -39,7 +38,7 @@ export default function App(): JSX.Element {
       outputDir: outputDir,
       setOutputDir: configCallbackBuilder(setOutputDir, 'obs.outputDir'),
     }
-  }
+  };
 
   const [view, setView] = useState('scoreboard');
   
@@ -73,12 +72,12 @@ export default function App(): JSX.Element {
     setMatchLength: setMatchLengthCallback,
     round: round,
     setRound: setRoundCallback,
-  }
+  };
 
   return (
     <div className={'app'.concat(appConfig.ui.darkmode ? ' dark' : '')}>
       <AppView view={view} matchState={matchState} appConfig={appConfig} />
       <ButtonModule currentView={view} clickCallback={setView} />
     </div>
-  )
+  );
 }

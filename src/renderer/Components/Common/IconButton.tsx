@@ -14,16 +14,16 @@ export function IconButton({icon, target, currentView, clickCallback, tooltip}: 
                 <span className='icon-button-tooltip group-hover:scale-100'>
                     {tooltip}
                 </span>
-            )
+            );
         } else {
-            return <></>
+            return <></>;
         }
-    }
+    };
 
     return (
         <div className={'icon-button group'.concat(currentView == target ? ' icon-button-active' : '')} onClick={() => clickCallback(target)}>
             {icon}
             <TooltipElement tooltip={tooltip} />
         </div>
-    )
+    );
 }

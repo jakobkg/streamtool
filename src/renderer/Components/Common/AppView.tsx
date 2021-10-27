@@ -19,6 +19,6 @@ export function AppView({ view, matchState, appConfig: appState }: AppViewProps)
             return <SettingsView appConfig={appState} />;
         
         default:
-            return <></>
+            return <></>;
     }
 }

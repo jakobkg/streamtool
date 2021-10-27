@@ -13,5 +13,5 @@ export function ScoreResetButton({setScoresCallbacks}: ScoreResetButtonProps): J
             }}>
             0-0
         </div>
-    )
+    );
 }

@@ -2,5 +2,5 @@ export function configCallbackBuilder<T>(setState: React.Dispatch<React.SetState
     return (value: T) => {
         setState(value);
         void window.store.set(key, value);
-    }
+    };
 }

@@ -10,4 +10,4 @@ ipcMain.handle('save-file', (_, filename: string, contents: string) => {
             return true;
         }
     });
-})
+});

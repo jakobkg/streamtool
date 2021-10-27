@@ -15,5 +15,5 @@ export function Score({ score, updateScoreCallback, matchLength }: ScoreProps): 
             }}>
             {score}
         </div>
-    )
+    );
 }
