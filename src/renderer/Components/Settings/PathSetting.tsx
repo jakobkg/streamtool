@@ -4,7 +4,7 @@ interface PathSettingProps {
     setValueCallback: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function PathSetting({name, value, setValueCallback}: PathSettingProps): JSX.Element {
+export function PathSetting({ name, value, setValueCallback }: PathSettingProps): JSX.Element {
     return (
         <div className={'settings-entry'} >
             {name}: <div className='font-normal'>{value.length == 0 ? 'None' : value}</div>

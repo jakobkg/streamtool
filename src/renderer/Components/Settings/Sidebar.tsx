@@ -7,7 +7,7 @@ interface SidebarProps {
     setPageCallback: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function Sidebar({page, setPageCallback}: SidebarProps): JSX.Element {
+export function Sidebar({ page, setPageCallback }: SidebarProps): JSX.Element {
     return (
         <div className="sidebar-container">
             <IconButton icon={<BsWindowSidebar size='28' />} currentView={page} target='ui' clickCallback={setPageCallback} tooltip='Interface' />

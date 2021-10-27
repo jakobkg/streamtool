@@ -6,9 +6,9 @@ interface IconButtonProps {
     tooltip?: string;
 }
 
-export function IconButton({icon, target, currentView, clickCallback, tooltip}: IconButtonProps): JSX.Element {
+export function IconButton({ icon, target, currentView, clickCallback, tooltip }: IconButtonProps): JSX.Element {
 
-    const TooltipElement = ({tooltip}: {tooltip?: string | undefined}) => {
+    const TooltipElement = ({ tooltip }: {tooltip?: string | undefined}) => {
         if (tooltip) {
             return (
                 <span className='icon-button-tooltip group-hover:scale-100'>

@@ -17,7 +17,9 @@
   },
   "plugins": ["@typescript-eslint", "import", "react-hooks"],
   "rules": {
-    "semi": 1
+    "semi": 1,
+    "object-curly-spacing": [1, "always"],
+    "array-bracket-spacing": 1
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
