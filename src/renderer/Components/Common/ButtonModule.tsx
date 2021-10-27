@@ -7,7 +7,7 @@ interface ButtonModuleProps {
     clickCallback: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function ButtonModule({currentView, clickCallback}: ButtonModuleProps): JSX.Element {
+export function ButtonModule({ currentView, clickCallback }: ButtonModuleProps): JSX.Element {
     return (
         <div className="button-module-container">
             {

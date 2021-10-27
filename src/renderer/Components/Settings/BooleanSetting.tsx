@@ -6,7 +6,7 @@ interface BooleanSettingProps {
     setValueCallback: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function BooleanSetting({name, value, setValueCallback}: BooleanSettingProps): JSX.Element {
+export function BooleanSetting({ name, value, setValueCallback }: BooleanSettingProps): JSX.Element {
     return (
         <div className={'settings-entry'} >
             {name}:

@@ -5,7 +5,7 @@ interface ToggleProps {
     setValueCallback: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function Toggle({value, setValueCallback}: ToggleProps): JSX.Element {
+export function Toggle({ value, setValueCallback }: ToggleProps): JSX.Element {
     return (
         <div className={'relative w-9 h-6 p-1 cursor-pointer rounded-full '.concat(value ? 'bg-green-500' : 'bg-red-500')}
              onClick={() => { setValueCallback(!value); }} >

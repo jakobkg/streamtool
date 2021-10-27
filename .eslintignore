@@ -57,3 +57,4 @@ package.json
 
 # config files
 tailwind.config.js
+.config

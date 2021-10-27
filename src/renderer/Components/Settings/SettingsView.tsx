@@ -7,7 +7,7 @@ interface SettingsViewProps {
     appConfig: AppConfig;
 }
 
-export function SettingsView({appConfig}: SettingsViewProps): JSX.Element {
+export function SettingsView({ appConfig }: SettingsViewProps): JSX.Element {
     const [page, setPage] = React.useState('obs');
 
     return (

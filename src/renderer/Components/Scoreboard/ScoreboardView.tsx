@@ -6,7 +6,7 @@ interface ScoreboardViewProps {
     matchState: MatchState;
 }
 
-export function ScoreboardView({matchState}: ScoreboardViewProps): JSX.Element {
+export function ScoreboardView({ matchState }: ScoreboardViewProps): JSX.Element {
     return (
         <div className='appview-container'>
             <Textfield description='Round' className='w-48 absolute top-1/5 left-1/2 transform -translate-x-1/2 text-center'
