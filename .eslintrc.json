@@ -23,7 +23,8 @@
     "quotes": 1,
     "jsx-quotes": 1,
     "no-mixed-spaces-and-tabs": 1,
-    "indent": 1
+    "indent": 1,
+    "space-infix-ops": 1
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
