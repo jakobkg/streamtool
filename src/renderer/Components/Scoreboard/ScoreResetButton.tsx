@@ -5,7 +5,7 @@ interface ScoreResetButtonProps {
 export function ScoreResetButton({ setScoresCallbacks }: ScoreResetButtonProps): JSX.Element {
     
     return (
-        <div className='scoreboardcontrolpanel-button score-reset-button'
+        <div className="scoreboardcontrolpanel-button score-reset-button"
             onClick={() => {
                 setScoresCallbacks.forEach(setScoreCallback => {
                     setScoreCallback(0);

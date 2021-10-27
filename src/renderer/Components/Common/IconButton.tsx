@@ -11,7 +11,7 @@ export function IconButton({ icon, target, currentView, clickCallback, tooltip }
     const TooltipElement = ({ tooltip }: {tooltip?: string | undefined}) => {
         if (tooltip) {
             return (
-                <span className='icon-button-tooltip group-hover:scale-100'>
+                <span className="icon-button-tooltip group-hover:scale-100">
                     {tooltip}
                 </span>
             );

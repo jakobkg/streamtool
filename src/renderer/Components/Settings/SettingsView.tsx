@@ -11,7 +11,7 @@ export function SettingsView({ appConfig }: SettingsViewProps): JSX.Element {
     const [page, setPage] = React.useState("obs");
 
     return (
-        <div className='appview-container'>
+        <div className="appview-container">
             <DynamicSettingsPage page={page} config={appConfig} />
             <Sidebar page={page} setPageCallback={setPage} />
         </div>
