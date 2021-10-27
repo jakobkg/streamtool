@@ -1,12 +1,12 @@
-import Scoreboard from './Scoreboard';
-import Textfield from '../Common/Textfield';
-import MatchState from '@interfaces/MatchState';
+import { Scoreboard } from './Scoreboard';
+import { Textfield } from '../Common/Textfield';
+import { MatchState } from '@interfaces/MatchState';
 
 interface ScoreboardViewProps {
     matchState: MatchState;
 }
 
-const ScoreboardView = ({matchState}: ScoreboardViewProps) => {
+export function ScoreboardView({matchState}: ScoreboardViewProps): JSX.Element {
     return (
         <div className='appview-container'>
             <Textfield description='Round' className='w-48 absolute top-1/5 left-1/2 transform -translate-x-1/2 text-center'
@@ -28,6 +28,4 @@ const ScoreboardView = ({matchState}: ScoreboardViewProps) => {
                        data={matchState.tags[1]} setterCallback={matchState.setTags[1]} />
         </div>
     )
-};
-
-export default ScoreboardView;
+}

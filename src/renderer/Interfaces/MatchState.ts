@@ -1,6 +1,4 @@
-import React from "react";
-
-export default interface MatchState {
+export interface MatchState {
     teams: string[];
     setTeams: React.Dispatch<React.SetStateAction<string>>[];
     tags: string[];

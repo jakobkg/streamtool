@@ -1,6 +1,5 @@
-import React from 'react';
-import MatchLengthToggle from './MatchLengthToggle';
-import ScoreResetButton from './ScoreResetButton';
+import { MatchLengthToggle } from './MatchLengthToggle';
+import { ScoreResetButton } from './ScoreResetButton';
 
 interface ScoreboardControlpanelProps {
     setScoresCallbacks: React.Dispatch<React.SetStateAction<number>>[];
@@ -8,7 +7,7 @@ interface ScoreboardControlpanelProps {
     setMatchLengthCallback: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const ScoreboardControlpanel = ({setScoresCallbacks, matchLength, setMatchLengthCallback}: ScoreboardControlpanelProps) => {
+export function ScoreboardControlpanel({setScoresCallbacks, matchLength, setMatchLengthCallback}: ScoreboardControlpanelProps):JSX.Element {
     return (
         <div className='scoreboardcontrolpanel'>
             <MatchLengthToggle matchLength={3} currentMatchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
@@ -18,5 +17,3 @@ const ScoreboardControlpanel = ({setScoresCallbacks, matchLength, setMatchLength
         
     )
 }
-
-export default ScoreboardControlpanel;

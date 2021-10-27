@@ -1,10 +1,8 @@
-import React from "react";
-
 interface ScoreResetButtonProps {
     setScoresCallbacks: React.Dispatch<React.SetStateAction<number>>[];
 }
 
-const ScoreResetButton = ({setScoresCallbacks}: ScoreResetButtonProps) => {
+export function ScoreResetButton({setScoresCallbacks}: ScoreResetButtonProps): JSX.Element {
     
     return (
         <div className='scoreboardcontrolpanel-button score-reset-button'
@@ -13,9 +11,7 @@ const ScoreResetButton = ({setScoresCallbacks}: ScoreResetButtonProps) => {
                     setScoreCallback(0);
                 });
             }}>
-                0-0
-            </div>
+            0-0
+        </div>
     )
 }
-
-export default ScoreResetButton;

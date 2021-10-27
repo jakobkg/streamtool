@@ -1,12 +1,10 @@
-import React from "react";
-
 interface MatchLengthToggleProps {
     currentMatchLength: number;
     matchLength: number;
     setMatchLengthCallback: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const MatchLengthToggle = ({ currentMatchLength, matchLength, setMatchLengthCallback }: MatchLengthToggleProps) => {
+export function MatchLengthToggle({ currentMatchLength, matchLength, setMatchLengthCallback }: MatchLengthToggleProps): JSX.Element {
     return (
         <div className={'scoreboardcontrolpanel-button'.concat(currentMatchLength == matchLength ? ' bg-gray-400' : '')}
              onClick={() => {setMatchLengthCallback(matchLength)}}>
@@ -14,5 +12,3 @@ const MatchLengthToggle = ({ currentMatchLength, matchLength, setMatchLengthCall
         </div>
     )
 }
-
-export default MatchLengthToggle;

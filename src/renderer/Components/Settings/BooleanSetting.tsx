@@ -1,5 +1,4 @@
-import React from "react";
-import Toggle from '../Common/Toggle';
+import { Toggle } from '../Common/Toggle';
 
 interface BooleanSettingProps {
     name: string;
@@ -7,7 +6,7 @@ interface BooleanSettingProps {
     setValueCallback: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const BooleanSetting = ({name, value, setValueCallback}: BooleanSettingProps) => {
+export function BooleanSetting({name, value, setValueCallback}: BooleanSettingProps): JSX.Element {
     return (
         <div className={'settings-entry'} >
             {name}:
@@ -15,5 +14,3 @@ const BooleanSetting = ({name, value, setValueCallback}: BooleanSettingProps) =>
         </div>
     )
 }
-
-export default BooleanSetting;

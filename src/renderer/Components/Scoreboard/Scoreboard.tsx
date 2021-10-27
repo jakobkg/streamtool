@@ -1,6 +1,5 @@
-import React from "react";
-import Score from './Score';
-import ScoreboardControlpanel from './ScoreboardControlpanel';
+import { Score } from './Score';
+import { ScoreboardControlpanel } from './ScoreboardControlpanel';
 
 interface ScoreboardProps {
     scores: number[];
@@ -9,7 +8,7 @@ interface ScoreboardProps {
     setMatchLengthCallback: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Scoreboard = ({ scores, setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardProps) => {
+export function Scoreboard({ scores, setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardProps): JSX.Element {
     return (
     <div className='scoreboard-container'>
         <div className='scores-container'>  
@@ -21,5 +20,3 @@ const Scoreboard = ({ scores, setScoresCallbacks, matchLength, setMatchLengthCal
     </div>
     )
 }
-
-export default Scoreboard;

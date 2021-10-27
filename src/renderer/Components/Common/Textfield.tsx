@@ -1,5 +1,3 @@
-import React from "react";
-
 interface TextfieldProps {
     data: string;
     setterCallback: React.Dispatch<React.SetStateAction<string>>;
@@ -7,7 +5,7 @@ interface TextfieldProps {
     description?: string;
 }
 
-const Textfield = ({data, setterCallback, className, description}: TextfieldProps) => {
+export function Textfield({data, setterCallback, className, description}: TextfieldProps): JSX.Element {
     return (
         <div className={'flex flex-col '.concat(className ? className : '')}>
             <p className='text-xs'>{description}</p>
@@ -17,5 +15,3 @@ const Textfield = ({data, setterCallback, className, description}: TextfieldProp
         </div>
     )
 }
-
-export default Textfield;

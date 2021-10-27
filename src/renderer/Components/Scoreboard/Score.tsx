@@ -1,12 +1,10 @@
-import React from "react";
-
 interface ScoreProps {
     score: number;
     updateScoreCallback: React.Dispatch<React.SetStateAction<number>>;
     matchLength?: number;
 }
 
-const Score = ({ score, updateScoreCallback, matchLength }: ScoreProps) => {
+export function Score({ score, updateScoreCallback, matchLength }: ScoreProps): JSX.Element {
     return (
         <div className='score' onMouseDown={(e) => {
                 if (e.nativeEvent.button == 0) {
@@ -19,5 +17,3 @@ const Score = ({ score, updateScoreCallback, matchLength }: ScoreProps) => {
         </div>
     )
 }
-
-export default Score;
