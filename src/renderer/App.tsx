@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { configCallbackBuilder } from './Builders/configCallbackBuilder';
 import { stateCallbackBuilder } from "./Builders/stateCallbackBuilder";
@@ -13,6 +13,18 @@ export default function App() {
   
   const [outputDir, setOutputDir] = useState('');
 
+  useEffect(() => {
+    window.store.get('ui.darkmode', true).then((value: boolean) => {
+      setDarkmode(value);
+    });
+  }, []);
+
+  useEffect(() => {
+    window.store.get('obs.outputDir', '').then((value: string) => {
+      setOutputDir(value);
+    })
+  })
+
   const appConfig: AppConfig = {
     ui: {
       darkmode: darkmode,
@@ -23,7 +35,7 @@ export default function App() {
       setOutputDir: configCallbackBuilder(setOutputDir, 'obs.outputDir'),
     }
   }
-
+  
   const [view, setView] = useState('scoreboard');
   
   const [p1Team, setP1Team] = useState('');
@@ -44,14 +56,6 @@ export default function App() {
   const setMatchLengthCallback = stateCallbackBuilder(setMatchLength, appConfig.obs.outputDir.concat('/bestof.txt'));
   const [round, setRound] = useState('');
   const setRoundCallback = stateCallbackBuilder(setRound, appConfig.obs.outputDir.concat('/round.txt'));
-  
-  window.store.get('ui.darkmode', true).then((value: boolean) => {
-    setDarkmode(value);
-  })
-  
-  window.store.get('obs.outputDir', '').then((value: string) => {
-    setOutputDir(value);
-  })
 
   const matchState: MatchState = {
     teams: [p1Team, p2Team],
