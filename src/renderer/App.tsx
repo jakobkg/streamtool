@@ -20,9 +20,13 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    window.store.get('obs.outputDir', '').then((value: string) => {
+    window.electron.getHomeDir().then((homedir)=> {
+      console.log(homedir);
+      window.store.get('obs.outputDir', homedir.concat('/scoreboard')).then((value: string) => {
       setOutputDir(value);
     })
+    })
+    
   })
 
   const appConfig: AppConfig = {
@@ -35,7 +39,7 @@ export default function App() {
       setOutputDir: configCallbackBuilder(setOutputDir, 'obs.outputDir'),
     }
   }
-  
+
   const [view, setView] = useState('scoreboard');
   
   const [p1Team, setP1Team] = useState('');
