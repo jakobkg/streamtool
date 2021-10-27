@@ -18,14 +18,13 @@ export function ScoreboardView({ matchState }: ScoreboardViewProps): JSX.Element
             <Textfield description="P1 tag" className="w-64 absolute bottom-1/2 left-36"
                        data={matchState.tags[0]} setterCallback={matchState.setTags[0]} />
 
-            <Scoreboard scores={matchState.scores} setScoresCallbacks={matchState.setScores}
-                        matchLength={matchState.matchLength} setMatchLengthCallback={matchState.setMatchLength} />
-
             <Textfield description="P2 team" className="w-28 absolute bottom-1/2 right-72"
                        data={matchState.teams[1]} setterCallback={matchState.setTeams[1]} />
 
             <Textfield description="P2 tag" className="w-64 absolute bottom-1/2 right-6"
                        data={matchState.tags[1]} setterCallback={matchState.setTags[1]} />
+
+            <Scoreboard matchState={matchState} />
         </div>
     );
 }

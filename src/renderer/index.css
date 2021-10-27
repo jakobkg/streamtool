@@ -30,8 +30,7 @@
   }
 
   .button {
-    @apply shadow-lg rounded-md px-1
-    text-white bg-gray-500 hover:bg-gray-400
+    @apply rounded-md px-1 hover:bg-gray-400
     transition-all duration-150 ease-linear
     cursor-pointer;
   }
@@ -54,10 +53,10 @@
   }
 
   .score {
-    @apply hover:bg-gray-500 hover:rounded-lg active:bg-green-500 transition-all duration-100 h-20;
+    @apply active:bg-green-500 h-20;
   }
 
-  .score-reset-button {
+  .scoreboard-reset-button {
      @apply bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
   }
 

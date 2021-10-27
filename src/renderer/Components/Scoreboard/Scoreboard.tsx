@@ -1,22 +1,20 @@
+import { MatchState } from "@/renderer/Interfaces/MatchState";
 import { Score } from "./Score";
 import { ScoreboardControlpanel } from "./ScoreboardControlpanel";
 
 interface ScoreboardProps {
-    scores: number[];
-    setScoresCallbacks: React.Dispatch<React.SetStateAction<number>>[];
-    matchLength: number;
-    setMatchLengthCallback: React.Dispatch<React.SetStateAction<number>>;
+    matchState: MatchState;
 }
 
-export function Scoreboard({ scores, setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardProps): JSX.Element {
+export function Scoreboard({ matchState }: ScoreboardProps): JSX.Element {
     return (
     <div className="scoreboard-container">
         <div className="scores-container">  
-            <Score score={scores[0]} updateScoreCallback={setScoresCallbacks[0]} matchLength={matchLength} />
+            <Score score={matchState.scores[0]} updateScoreCallback={matchState.setScores[0]} matchLength={matchState.matchLength} />
             -
-            <Score score={scores[1]} updateScoreCallback={setScoresCallbacks[1]} matchLength={matchLength} />
+            <Score score={matchState.scores[1]} updateScoreCallback={matchState.setScores[1]} matchLength={matchState.matchLength} />
     </div>
-    <ScoreboardControlpanel setScoresCallbacks={setScoresCallbacks} matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
+    <ScoreboardControlpanel matchState={matchState} />
     </div>
     );
 }

@@ -8,7 +8,7 @@ export function PathSetting({ name, value, setValueCallback }: PathSettingProps)
     return (
         <div className={"settings-entry"} >
             {name}: <div className="font-normal">{value.length == 0 ? "None" : value}</div>
-            <div className="button" onClick={async () => {
+            <div className="button bg-gray-400" onClick={async () => {
                     const result = await window.electron.openDirSelectDialog();
                     if (result.length > 0) {
                         setValueCallback(result[0]);

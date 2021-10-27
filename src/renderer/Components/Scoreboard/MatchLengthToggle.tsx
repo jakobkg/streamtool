@@ -6,7 +6,7 @@ interface MatchLengthToggleProps {
 
 export function MatchLengthToggle({ currentMatchLength, matchLength, setMatchLengthCallback }: MatchLengthToggleProps): JSX.Element {
     return (
-        <div className={"scoreboardcontrolpanel-button".concat(currentMatchLength == matchLength ? " bg-gray-400" : "")}
+        <div className={"button scoreboardcontrolpanel-button".concat(currentMatchLength == matchLength ? " bg-green-800" : "")}
              onClick={() => {setMatchLengthCallback(matchLength);}}>
             Bo{matchLength}
         </div>
