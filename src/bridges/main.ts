@@ -35,15 +35,15 @@ export const electronBridge = {
   },
 
   openDirSelectDialog: async (): Promise<string[]> => {
-    return await ipcRenderer.invoke('select-dir'); // eslint-disable-line @typescript-eslint/no-unsafe-return
+    return await ipcRenderer.invoke("select-dir"); // eslint-disable-line @typescript-eslint/no-unsafe-return
   },
 
   saveFile: async (filename: string, contents: string): Promise<boolean> => {
-    return await ipcRenderer.invoke('save-file', filename, contents); // eslint-disable-line @typescript-eslint/no-unsafe-return
+    return await ipcRenderer.invoke("save-file", filename, contents); // eslint-disable-line @typescript-eslint/no-unsafe-return
   },
 
   getHomeDir: async (): Promise<string> => {
-    return await ipcRenderer.invoke('get-homedir'); // eslint-disable-line @typescript-eslint/no-unsafe-return
+    return await ipcRenderer.invoke("get-homedir"); // eslint-disable-line @typescript-eslint/no-unsafe-return
   }
 };
 

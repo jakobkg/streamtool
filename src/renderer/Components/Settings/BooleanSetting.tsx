@@ -1,4 +1,4 @@
-import { Toggle } from '../Common/Toggle';
+import { Toggle } from "../Common/Toggle";
 
 interface BooleanSettingProps {
     name: string;
@@ -8,7 +8,7 @@ interface BooleanSettingProps {
 
 export function BooleanSetting({ name, value, setValueCallback }: BooleanSettingProps): JSX.Element {
     return (
-        <div className={'settings-entry'} >
+        <div className={"settings-entry"} >
             {name}:
             <Toggle value={value} setValueCallback={setValueCallback} />
         </div>

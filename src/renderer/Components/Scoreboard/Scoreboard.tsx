@@ -1,5 +1,5 @@
-import { Score } from './Score';
-import { ScoreboardControlpanel } from './ScoreboardControlpanel';
+import { Score } from "./Score";
+import { ScoreboardControlpanel } from "./ScoreboardControlpanel";
 
 interface ScoreboardProps {
     scores: number[];

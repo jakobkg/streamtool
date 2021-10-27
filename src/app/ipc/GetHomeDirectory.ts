@@ -1,6 +1,6 @@
-import { ipcMain } from 'electron';
-import os from 'os';
+import { ipcMain } from "electron";
+import os from "os";
 
-ipcMain.handle('get-homedir', () => {
+ipcMain.handle("get-homedir", () => {
     return os.homedir();
 });

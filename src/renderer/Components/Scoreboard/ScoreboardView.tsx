@@ -1,6 +1,6 @@
-import { Scoreboard } from './Scoreboard';
-import { Textfield } from '../Common/Textfield';
-import { MatchState } from '@interfaces/MatchState';
+import { Scoreboard } from "./Scoreboard";
+import { Textfield } from "../Common/Textfield";
+import { MatchState } from "@interfaces/MatchState";
 
 interface ScoreboardViewProps {
     matchState: MatchState;

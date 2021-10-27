@@ -6,8 +6,8 @@ interface PathSettingProps {
 
 export function PathSetting({ name, value, setValueCallback }: PathSettingProps): JSX.Element {
     return (
-        <div className={'settings-entry'} >
-            {name}: <div className='font-normal'>{value.length == 0 ? 'None' : value}</div>
+        <div className={"settings-entry"} >
+            {name}: <div className='font-normal'>{value.length == 0 ? "None" : value}</div>
             <div className='button' onClick={async () => {
                     const result = await window.electron.openDirSelectDialog();
                     if (result.length > 0) {

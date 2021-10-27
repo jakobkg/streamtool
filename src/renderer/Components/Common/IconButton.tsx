@@ -21,7 +21,7 @@ export function IconButton({ icon, target, currentView, clickCallback, tooltip }
     };
 
     return (
-        <div className={'icon-button group'.concat(currentView == target ? ' icon-button-active' : '')} onClick={() => clickCallback(target)}>
+        <div className={"icon-button group".concat(currentView == target ? " icon-button-active" : "")} onClick={() => clickCallback(target)}>
             {icon}
             <TooltipElement tooltip={tooltip} />
         </div>
