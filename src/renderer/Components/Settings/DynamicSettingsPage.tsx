@@ -1,6 +1,6 @@
-import { AppConfig } from '@interfaces/AppConfig';
-import { UISettingsPage } from './UISettingsPage';
-import { OBSSettingsPage } from './OBSSettingsPage';
+import { AppConfig } from "@interfaces/AppConfig";
+import { UISettingsPage } from "./UISettingsPage";
+import { OBSSettingsPage } from "./OBSSettingsPage";
 
 interface DynamicSettingsPageProps {
     page: string;
@@ -9,10 +9,10 @@ interface DynamicSettingsPageProps {
 
 export function DynamicSettingsPage({ page, config }: DynamicSettingsPageProps): JSX.Element {
     switch (page) {
-        case 'ui':
+        case "ui":
             return <UISettingsPage config={config} />;
     
-        case 'obs':
+        case "obs":
             return <OBSSettingsPage config={config} />;
 
         default:

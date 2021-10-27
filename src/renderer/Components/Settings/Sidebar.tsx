@@ -1,5 +1,5 @@
 import { BsWindowSidebar } from "react-icons/bs";
-import { SiObsstudio } from 'react-icons/si';
+import { SiObsstudio } from "react-icons/si";
 import { IconButton } from "../Common/IconButton";
 
 interface SidebarProps {

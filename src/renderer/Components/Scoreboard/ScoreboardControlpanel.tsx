@@ -1,5 +1,5 @@
-import { MatchLengthToggle } from './MatchLengthToggle';
-import { ScoreResetButton } from './ScoreResetButton';
+import { MatchLengthToggle } from "./MatchLengthToggle";
+import { ScoreResetButton } from "./ScoreResetButton";
 
 interface ScoreboardControlpanelProps {
     setScoresCallbacks: React.Dispatch<React.SetStateAction<number>>[];

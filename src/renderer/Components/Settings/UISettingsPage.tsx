@@ -1,5 +1,5 @@
 import { BooleanSetting } from "./BooleanSetting";
-import { AppConfig } from '@interfaces/AppConfig';
+import { AppConfig } from "@interfaces/AppConfig";
 
 interface UISettingsPageProps {
     config: AppConfig;

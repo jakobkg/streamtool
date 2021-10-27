@@ -1,8 +1,8 @@
-import { ScoreboardView } from '../Scoreboard/ScoreboardView';
-import { SettingsView } from '../Settings/SettingsView';
+import { ScoreboardView } from "../Scoreboard/ScoreboardView";
+import { SettingsView } from "../Settings/SettingsView";
 
-import { MatchState } from '@interfaces/MatchState';
-import { AppConfig } from '@interfaces/AppConfig';
+import { MatchState } from "@interfaces/MatchState";
+import { AppConfig } from "@interfaces/AppConfig";
 
 interface AppViewProps {
     view: string;
@@ -12,10 +12,10 @@ interface AppViewProps {
 
 export function AppView({ view, matchState, appConfig: appState }: AppViewProps): JSX.Element {
     switch (view) {
-        case 'scoreboard':
+        case "scoreboard":
             return <ScoreboardView matchState={matchState} />;
             
-        case 'settings':
+        case "settings":
             return <SettingsView appConfig={appState} />;
         
         default:
