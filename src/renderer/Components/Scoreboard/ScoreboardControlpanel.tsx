@@ -9,7 +9,7 @@ interface ScoreboardControlpanelProps {
 
 export function ScoreboardControlpanel({ setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardControlpanelProps):JSX.Element {
     return (
-        <div className='scoreboardcontrolpanel'>
+        <div className="scoreboardcontrolpanel">
             <MatchLengthToggle matchLength={3} currentMatchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
             <ScoreResetButton setScoresCallbacks={setScoresCallbacks} />
             <MatchLengthToggle matchLength={5} currentMatchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />

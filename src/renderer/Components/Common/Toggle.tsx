@@ -11,8 +11,8 @@ export function Toggle({ value, setValueCallback }: ToggleProps): JSX.Element {
              onClick={() => { setValueCallback(!value); }} >
             <div className={"absolute w-4 h-4 transition-all duration-100 rounded-full bg-white ".concat(value ? "left-4" : "left-1")}>
             </div>
-            <ImCross className='text-white absolute right-1.5 top-2 w-2 h-2' />
-            <ImCheckmark className='text-white absolute left-1.5 top-2 w-2 h-2' />
+            <ImCross className="text-white absolute right-1.5 top-2 w-2 h-2" />
+            <ImCheckmark className="text-white absolute left-1.5 top-2 w-2 h-2" />
         </div>
     );
 }
