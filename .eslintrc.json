@@ -21,7 +21,9 @@
     "object-curly-spacing": [1, "always"],
     "array-bracket-spacing": 1,
     "quotes": 1,
-    "jsx-quotes": 1
+    "jsx-quotes": 1,
+    "no-mixed-spaces-and-tabs": 1,
+    "indent": 1
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",

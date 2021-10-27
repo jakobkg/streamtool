@@ -12,13 +12,13 @@ interface AppViewProps {
 
 export function AppView({ view, matchState, appConfig: appState }: AppViewProps): JSX.Element {
     switch (view) {
-        case "scoreboard":
-            return <ScoreboardView matchState={matchState} />;
+    case "scoreboard":
+        return <ScoreboardView matchState={matchState} />;
             
-        case "settings":
-            return <SettingsView appConfig={appState} />;
+    case "settings":
+        return <SettingsView appConfig={appState} />;
         
-        default:
-            return <></>;
+    default:
+        return <></>;
     }
 }

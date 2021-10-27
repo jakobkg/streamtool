@@ -10,13 +10,13 @@ interface ScoreboardProps {
 
 export function Scoreboard({ scores, setScoresCallbacks, matchLength, setMatchLengthCallback }: ScoreboardProps): JSX.Element {
     return (
-    <div className="scoreboard-container">
-        <div className="scores-container">  
-            <Score score={scores[0]} updateScoreCallback={setScoresCallbacks[0]} matchLength={matchLength} />
+        <div className="scoreboard-container">
+            <div className="scores-container">  
+                <Score score={scores[0]} updateScoreCallback={setScoresCallbacks[0]} matchLength={matchLength} />
             -
-            <Score score={scores[1]} updateScoreCallback={setScoresCallbacks[1]} matchLength={matchLength} />
-    </div>
-    <ScoreboardControlpanel setScoresCallbacks={setScoresCallbacks} matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
-    </div>
+                <Score score={scores[1]} updateScoreCallback={setScoresCallbacks[1]} matchLength={matchLength} />
+            </div>
+            <ScoreboardControlpanel setScoresCallbacks={setScoresCallbacks} matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
+        </div>
     );
 }

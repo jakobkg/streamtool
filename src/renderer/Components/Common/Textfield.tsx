@@ -10,8 +10,8 @@ export function Textfield({ data, setterCallback, className, description }: Text
         <div className={"flex flex-col ".concat(className ? className : "")}>
             <p className="text-xs">{description}</p>
             <input type="text" className="text-black" spellCheck="false"
-            value={data}
-            onChange={e => setterCallback(e.target.value)}></input>
+                value={data}
+                onChange={e => setterCallback(e.target.value)}></input>
         </div>
     );
 }
