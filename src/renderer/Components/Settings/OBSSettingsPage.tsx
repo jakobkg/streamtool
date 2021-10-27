@@ -14,5 +14,5 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
                 <PathSetting name='Output dir' value={config.obs.outputDir} setValueCallback={config.obs.setOutputDir} />
             </div>
         </div>
-    )
+    );
 }

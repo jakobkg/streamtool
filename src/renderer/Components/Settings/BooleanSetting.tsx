@@ -12,5 +12,5 @@ export function BooleanSetting({name, value, setValueCallback}: BooleanSettingPr
             {name}:
             <Toggle value={value} setValueCallback={setValueCallback} />
         </div>
-    )
+    );
 }

@@ -16,5 +16,5 @@ export function ButtonModule({currentView, clickCallback}: ButtonModuleProps): J
                 <IconButton icon={<BsArrowLeft size="28" />} target='scoreboard' currentView={currentView} clickCallback={clickCallback} />
             }
         </div>
-    )
+    );
 }

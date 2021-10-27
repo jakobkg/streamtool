@@ -16,7 +16,9 @@
     "tsconfigRootDir": "./"
   },
   "plugins": ["@typescript-eslint", "import", "react-hooks"],
-  "rules": {},
+  "rules": {
+    "semi": 1
+  },
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",

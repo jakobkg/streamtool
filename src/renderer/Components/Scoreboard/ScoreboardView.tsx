@@ -27,5 +27,5 @@ export function ScoreboardView({matchState}: ScoreboardViewProps): JSX.Element {
             <Textfield description='P2 tag' className='w-64 absolute bottom-1/2 right-6'
                        data={matchState.tags[1]} setterCallback={matchState.setTags[1]} />
         </div>
-    )
+    );
 }

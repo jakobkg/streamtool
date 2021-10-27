@@ -15,5 +15,5 @@ export function PathSetting({name, value, setValueCallback}: PathSettingProps): 
                     }
                 }}>Select directory</div>
         </div>
-    )
+    );
 }

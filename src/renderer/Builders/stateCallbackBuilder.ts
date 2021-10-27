@@ -2,5 +2,5 @@ export function stateCallbackBuilder<T>(setState: React.Dispatch<React.SetStateA
     return (value) => {
         setState(value);
         void window.electron.saveFile(key, String(value));
-    }
+    };
 }

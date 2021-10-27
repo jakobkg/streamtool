@@ -18,5 +18,5 @@ export function Scoreboard({ scores, setScoresCallbacks, matchLength, setMatchLe
     </div>
     <ScoreboardControlpanel setScoresCallbacks={setScoresCallbacks} matchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
     </div>
-    )
+    );
 }

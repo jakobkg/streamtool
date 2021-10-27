@@ -15,5 +15,5 @@ export function ScoreboardControlpanel({setScoresCallbacks, matchLength, setMatc
             <MatchLengthToggle matchLength={5} currentMatchLength={matchLength} setMatchLengthCallback={setMatchLengthCallback} />
         </div>
         
-    )
+    );
 }

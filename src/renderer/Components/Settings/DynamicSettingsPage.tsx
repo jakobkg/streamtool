@@ -10,12 +10,12 @@ interface DynamicSettingsPageProps {
 export function DynamicSettingsPage({ page, config }: DynamicSettingsPageProps): JSX.Element {
     switch (page) {
         case 'ui':
-            return <UISettingsPage config={config} />
+            return <UISettingsPage config={config} />;
     
         case 'obs':
-            return <OBSSettingsPage config={config} />
+            return <OBSSettingsPage config={config} />;
 
         default:
-            return <></>
+            return <></>;
     }
 }

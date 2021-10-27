@@ -15,5 +15,5 @@ export function SettingsView({appConfig}: SettingsViewProps): JSX.Element {
             <DynamicSettingsPage page={page} config={appConfig} />
             <Sidebar page={page} setPageCallback={setPage} />
         </div>
-    )
+    );
 }
