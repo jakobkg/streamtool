@@ -1,13 +1,13 @@
-import AppConfig from "@interfaces/AppConfig";
-import UISettingsPage from './UISettingsPage';
-import OBSSettingsPage from './OBSSettingsPage';
+import { AppConfig } from '@interfaces/AppConfig';
+import { UISettingsPage } from './UISettingsPage';
+import { OBSSettingsPage } from './OBSSettingsPage';
 
 interface DynamicSettingsPageProps {
     page: string;
     config: AppConfig;
 }
 
-const DynamicSettingsPage = ({ page, config }: DynamicSettingsPageProps) => {
+export function DynamicSettingsPage({ page, config }: DynamicSettingsPageProps): JSX.Element {
     switch (page) {
         case 'ui':
             return <UISettingsPage config={config} />
@@ -19,5 +19,3 @@ const DynamicSettingsPage = ({ page, config }: DynamicSettingsPageProps) => {
             return <></>
     }
 }
-
-export default DynamicSettingsPage;

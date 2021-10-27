@@ -6,7 +6,7 @@ interface IconButtonProps {
     tooltip?: string;
 }
 
-function IconButton({icon, target, currentView, clickCallback, tooltip}: IconButtonProps) {
+export function IconButton({icon, target, currentView, clickCallback, tooltip}: IconButtonProps): JSX.Element {
 
     const TooltipElement = ({tooltip}: {tooltip?: string | undefined}) => {
         if (tooltip) {
@@ -27,5 +27,3 @@ function IconButton({icon, target, currentView, clickCallback, tooltip}: IconBut
         </div>
     )
 }
-
-export default IconButton;

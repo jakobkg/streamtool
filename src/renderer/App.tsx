@@ -3,28 +3,29 @@ import { useEffect, useState } from "react";
 import { configCallbackBuilder } from './Builders/configCallbackBuilder';
 import { stateCallbackBuilder } from "./Builders/stateCallbackBuilder";
 
-import AppView from "./Components/Common/AppView";
-import ButtonModule from "./Components/Common/ButtonModule";
-import MatchState from '@interfaces/MatchState';
-import AppConfig from '@interfaces/AppConfig';
+import { AppView } from "./Components/Common/AppView";
+import { ButtonModule } from "./Components/Common/ButtonModule";
+import { MatchState } from '@interfaces/MatchState';
+import { AppConfig } from '@interfaces/AppConfig';
 
-export default function App() {
+export default function App(): JSX.Element {
   const [darkmode, setDarkmode] = useState(true);
   
   const [outputDir, setOutputDir] = useState('');
 
   useEffect(() => {
-    window.store.get('ui.darkmode', true).then((value: boolean) => {
+    window.store.get('ui.darkmode').then((value: boolean) => {
       setDarkmode(value);
-    });
+    }).catch(() => {return;});
   }, []);
 
   useEffect(() => {
     window.electron.getHomeDir().then((homedir)=> {
-      console.log(homedir);
       window.store.get('obs.outputDir', homedir.concat('/scoreboard')).then((value: string) => {
       setOutputDir(value);
-    })
+      }).catch(() => {return;})
+    }).catch(() => {
+      alert('Unable to find home directory, please set this in the settings.');
     })
     
   })

@@ -1,11 +1,11 @@
-import AppConfig from "@interfaces/AppConfig";
-import PathSetting from "./PathSetting";
+import { AppConfig } from "@interfaces/AppConfig";
+import { PathSetting } from "./PathSetting";
 
 interface OBSSettingsPageProps {
     config: AppConfig;
 }
 
-const OBSSettingsPage = ({ config }: OBSSettingsPageProps) => {
+export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
     return (
         <div className='settings-page'>
             <h1>OBS</h1>
@@ -16,5 +16,3 @@ const OBSSettingsPage = ({ config }: OBSSettingsPageProps) => {
         </div>
     )
 }
-
-export default OBSSettingsPage;

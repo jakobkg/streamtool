@@ -1,11 +1,11 @@
-import BooleanSetting from "./BooleanSetting";
-import AppConfig from '@interfaces/AppConfig';
+import { BooleanSetting } from "./BooleanSetting";
+import { AppConfig } from '@interfaces/AppConfig';
 
 interface UISettingsPageProps {
     config: AppConfig;
 }
 
-const UISettingsPage = ({ config }: UISettingsPageProps) => {
+export function UISettingsPage({ config }: UISettingsPageProps): JSX.Element {
     return (
         <div className='settings-page'>
             <h1>Interface</h1>
@@ -16,5 +16,3 @@ const UISettingsPage = ({ config }: UISettingsPageProps) => {
         </div>
     )
 }
-
-export default UISettingsPage;

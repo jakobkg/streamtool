@@ -1,13 +1,13 @@
-import React from "react";
-import AppConfig from '@interfaces/AppConfig';
-import DynamicSettingsPage from "./DynamicSettingsPage";
-import Sidebar from './Sidebar';
+import React from 'react';
+import { AppConfig } from '@interfaces/AppConfig';
+import { DynamicSettingsPage } from "./DynamicSettingsPage";
+import { Sidebar } from './Sidebar';
 
 interface SettingsViewProps {
     appConfig: AppConfig;
 }
 
-const SettingsView = ({appConfig}: SettingsViewProps) => {
+export function SettingsView({appConfig}: SettingsViewProps): JSX.Element {
     const [page, setPage] = React.useState('obs');
 
     return (
@@ -16,6 +16,4 @@ const SettingsView = ({appConfig}: SettingsViewProps) => {
             <Sidebar page={page} setPageCallback={setPage} />
         </div>
     )
-};
-
-export default SettingsView;
+}

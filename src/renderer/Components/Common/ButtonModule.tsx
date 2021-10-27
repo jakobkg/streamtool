@@ -1,9 +1,13 @@
 import { FaCog } from 'react-icons/fa';
 import { BsArrowLeft } from 'react-icons/bs';
-import IconButton from './IconButton';
-import ButtonModuleProps from '@interfaces/ButtonModuleProps';
+import { IconButton } from './IconButton';
 
-export default function ButtonModule({currentView, clickCallback}: ButtonModuleProps) {
+interface ButtonModuleProps {
+    currentView: string;
+    clickCallback: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export function ButtonModule({currentView, clickCallback}: ButtonModuleProps): JSX.Element {
     return (
         <div className="button-module-container">
             {

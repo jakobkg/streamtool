@@ -1,4 +1,4 @@
-export default interface AppConfig {
+export interface AppConfig {
     ui: {
         darkmode: boolean;
         setDarkmode: (value: boolean) => void;
