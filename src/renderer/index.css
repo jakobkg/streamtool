@@ -2,87 +2,27 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "./Styles/buttons.css";
+@import "./Styles/scoreboard.css";
+@import "./Styles/settings.css";
+
 @layer components {
-  .app {
-    @apply flex flex-row dark:bg-gray-800 w-screen h-screen;
-    user-select: none;
-  }
+    .app {
+        @apply flex flex-row w-screen h-screen;
+        user-select: none;
+    }
 
-  .button-module-container {
-    @apply fixed top-0 right-0 h-16 w-16 rounded-bl-lg
-    flex flex-row
-    bg-gray-300 dark:bg-gray-800 dark:text-white shadow-lg;
-  }
-  .icon-button {
-    @apply relative flex items-center justify-center
-    h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
-    text-white bg-gray-500 hover:bg-gray-400
-    rounded-3xl hover:rounded-md
-    transition-all duration-150 ease-linear
-    cursor-pointer;
-  }
+    .appview-container {
+        @apply fixed h-screen w-screen p-6
+        bg-gray-100 text-black dark:bg-gray-700 dark:text-white;
+    }
 
-  .icon-button-tooltip {
-    @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md
-    text-white bg-gray-900 
-    text-xs font-bold
-    transform transition-all duration-100 scale-0 origin-left;
-  }
+    .button-module-container {
+        @apply fixed top-0 right-0 h-16 w-16 rounded-bl-lg
+        bg-gray-300 dark:bg-gray-800 shadow-lg;
+    }
 
-  .button {
-    @apply rounded-md px-1 hover:bg-gray-400
-    transition-all duration-150 ease-linear
-    cursor-pointer;
-  }
-
-  .icon-button-active {
-    @apply rounded-xl bg-green-600 text-white drop-shadow-xl;
-  }
-
-  .appview-container {
-    @apply fixed h-screen w-screen p-6
-    bg-gray-100 text-black dark:bg-gray-700 dark:text-white;
-  }
-
-  .scoreboard-container {
-    @apply font-mono font-bold text-8xl flex flex-col items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
-  }
-
-  .scores-container {
-    @apply flex flex-row;
-  }
-
-  .score {
-    @apply active:bg-green-500 h-20;
-  }
-
-  .scoreboard-reset-button {
-     @apply bg-gray-800 hover:bg-gray-500 active:bg-red-800 transition-all
-  }
-
-  .scoreboardcontrolpanel {
-    @apply text-sm flex flex-row justify-around w-full font-bold text-center;
-  }
-
-  .scoreboardcontrolpanel-button {
-    @apply bg-gray-800 w-1/3 rounded-md cursor-pointer;
-  }
-
-  .sidebar-container {
-    @apply fixed top-0 left-0 h-screen w-16 flex flex-col
-    bg-white dark:bg-gray-900 shadow-lg;
-  }
-
-  .settings-page {
-    @apply fixed left-16 pl-3 w-full;
-  }
-
-  .settings-entry {
-    @apply flex flex-row gap-2
-    text-base font-semibold;
-  }
-
-  h1 {
-    @apply text-4xl font-bold;
-  }
+    h1 {
+        @apply text-4xl font-bold;
+    }
 }

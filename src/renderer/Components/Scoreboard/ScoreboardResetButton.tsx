@@ -6,7 +6,7 @@ interface ScoreboardResetButtonProps {
 
 export function ScoreboardResetButton({ matchState }: ScoreboardResetButtonProps): JSX.Element {
     return (
-        <div className="button scoreboardcontrolpanel-button scoreboard-reset-button"
+        <div className="scoreboard-reset-button"
             onClick={() => {
                 matchState.setScores.forEach((setScore) => { setScore(0); });
                 matchState.setRound('');

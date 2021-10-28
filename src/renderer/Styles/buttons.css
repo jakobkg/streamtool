@@ -1,0 +1,38 @@
+@layer components {
+    .button {
+        @apply rounded-md px-1
+        hover:bg-gray-400
+        transition-all
+        cursor-pointer;
+    }
+
+    .icon-button {
+        @apply relative flex items-center justify-center
+        h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
+        bg-gray-500 hover:bg-gray-400 text-white
+        rounded-3xl hover:rounded-md
+        transition-all duration-150 ease-linear
+        cursor-pointer;
+    }
+
+    .icon-button-active {
+        @apply rounded-xl bg-green-600 text-white drop-shadow-xl;
+    }
+
+    .icon-button-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14
+        rounded-md shadow-md
+        bg-gray-900 
+        text-xs font-bold
+        transform transition-all duration-100 scale-0 origin-left;
+    }
+
+    .scoreboard-reset-button {
+        @apply dark:active:bg-red-800 active:bg-red-500  transition-all
+        bg-gray-300 dark:bg-gray-500 hover:bg-gray-400 w-1/3 rounded-md cursor-pointer;
+   }
+
+   .scoreboardcontrolpanel-button {
+       @apply bg-gray-300 dark:bg-gray-500 w-1/3 rounded-md cursor-pointer;
+   }
+}

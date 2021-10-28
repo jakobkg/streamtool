@@ -1,0 +1,17 @@
+@layer components {
+    .scoreboard-container {
+        @apply font-mono font-bold text-8xl flex flex-col items-center absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2;
+    }
+
+    .scores-container {
+        @apply flex flex-row;
+    }
+
+    .score {
+        @apply active:bg-green-500 h-20;
+    }
+
+    .scoreboardcontrolpanel {
+        @apply text-sm flex flex-row justify-around w-full font-bold text-center;
+    }
+}

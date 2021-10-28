@@ -8,7 +8,7 @@ interface SettingsViewProps {
 }
 
 export function SettingsView({ appConfig }: SettingsViewProps): JSX.Element {
-    const [page, setPage] = React.useState("obs");
+    const [page, setPage] = React.useState("ui");
 
     return (
         <div className="appview-container">
