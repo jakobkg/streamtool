@@ -26,9 +26,9 @@ module.exports = {
     },
 
     {
-      name: "@electron-forge/maker-deb",
+      name: "@electron-forge/maker-snap",
       config: {
-        icon: path.join(packageAssetsPath, "icons", "png", "1024x1024.png"),
+        
       },
     },
   ],
