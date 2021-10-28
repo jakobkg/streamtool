@@ -1,12 +1,12 @@
 export interface MatchState {
     teams: string[];
-    setTeams: React.Dispatch<React.SetStateAction<string>>[];
+    setTeams: ((value: string, force?: boolean) => void)[];
     tags: string[];
-    setTags: React.Dispatch<React.SetStateAction<string>>[];
+    setTags: ((value: string, force?: boolean) => void)[];
     scores: number[];
-    setScores: React.Dispatch<React.SetStateAction<number>>[];
+    setScores: ((value: number, force?: boolean) => void)[];
     matchLength: number;
-    setMatchLength: React.Dispatch<React.SetStateAction<number>>;
+    setMatchLength: (value: number, force?: boolean) => void;
     round: string;
-    setRound: React.Dispatch<React.SetStateAction<string>>;
+    setRound: (value: string, force?: boolean) => void;
 }

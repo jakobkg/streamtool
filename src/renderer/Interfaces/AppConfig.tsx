@@ -6,5 +6,7 @@ export interface AppConfig {
     obs: {
         outputDir: string;
         setOutputDir: (value: string) => void;
+        liveUpdate: boolean;
+        setLiveUpdate: (value: boolean) => void;
     }
 }

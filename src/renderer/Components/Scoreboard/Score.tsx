@@ -1,6 +1,6 @@
 interface ScoreProps {
     score: number;
-    updateScoreCallback: React.Dispatch<React.SetStateAction<number>>;
+    updateScoreCallback: (value: number) => void;
     matchLength?: number;
 }
 

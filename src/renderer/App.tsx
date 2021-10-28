@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 
-import { configCallbackBuilder } from "./Builders/configCallbackBuilder";
-import { stateCallbackBuilder } from "./Builders/stateCallbackBuilder";
+import { configCallbackBuilder } from "./Functions/configCallbackBuilder";
+import { stateCallbackBuilder } from "./Functions/stateCallbackBuilder";
 
 import { AppView } from "./Components/Common/AppView";
 import { ButtonModule } from "./Components/Common/ButtonModule";
 import { MatchState } from "@interfaces/MatchState";
 import { AppConfig } from "@interfaces/AppConfig";
 
-export default function App(): JSX.Element {
+export let appConfig: AppConfig;
+export let matchState: MatchState;
+
+export function App(): JSX.Element {
   const [darkmode, setDarkmode] = useState(true);
   
   const [outputDir, setOutputDir] = useState("");
+
+  const [liveUpdate, setLiveUpdate] = useState(true);
 
   useEffect(() => {
     window.store.get("ui.darkmode").then((value: boolean) => {
@@ -29,7 +34,13 @@ export default function App(): JSX.Element {
     });
   });
 
-  const appConfig: AppConfig = {
+  useEffect(() => {
+    window.store.get("obs.liveUpdate").then((value: boolean) => {
+      setLiveUpdate(value);
+    }).catch(() => {return;});
+  }, []);
+
+  appConfig = {
     ui: {
       darkmode: darkmode,
       setDarkmode: configCallbackBuilder(setDarkmode, "ui.darkmode"),
@@ -37,6 +48,8 @@ export default function App(): JSX.Element {
     obs: {
       outputDir: outputDir,
       setOutputDir: configCallbackBuilder(setOutputDir, "obs.outputDir"),
+      liveUpdate: liveUpdate,
+      setLiveUpdate: configCallbackBuilder(setLiveUpdate, "obs.liveUpdate"),
     }
   };
 
@@ -61,7 +74,7 @@ export default function App(): JSX.Element {
   const [round, setRound] = useState("");
   const setRoundCallback = stateCallbackBuilder(setRound, appConfig.obs.outputDir.concat("/round.txt"));
 
-  const matchState: MatchState = {
+  matchState = {
     teams: [p1Team, p2Team],
     setTeams: [setP1TeamCallback, setP2TeamCallback],
     tags: [p1Tag, p2Tag],

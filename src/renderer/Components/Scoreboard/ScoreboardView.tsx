@@ -1,14 +1,22 @@
 import { Scoreboard } from "./Scoreboard";
 import { Textfield } from "../Common/Textfield";
 import { MatchState } from "@interfaces/MatchState";
+import { AppConfig } from "@interfaces/AppConfig";
+import { updateObsFiles } from "@/renderer/Functions/updateObsFiles";
 
 interface ScoreboardViewProps {
     matchState: MatchState;
+    appConfig: AppConfig;
 }
 
-export function ScoreboardView({ matchState }: ScoreboardViewProps): JSX.Element {
+export function ScoreboardView({ matchState, appConfig }: ScoreboardViewProps): JSX.Element {
+    const liveUpdate = appConfig.obs.liveUpdate;
     return (
-        <div className="appview-container">
+        <div className="appview-container" onKeyPress={(event) => {
+            if (event.key == "Enter" && !liveUpdate) {
+                updateObsFiles();
+            }
+        }}>
             <Textfield description="Round" className="w-48 absolute top-1/5 left-1/2 transform -translate-x-1/2 text-center"
                        data={matchState.round} setterCallback={matchState.setRound} />
 
