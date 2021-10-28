@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { configCallbackBuilder } from "./Functions/configCallbackBuilder";
 import { stateCallbackBuilder } from "./Functions/stateCallbackBuilder";
@@ -10,13 +10,17 @@ import { AppConfig } from "@interfaces/AppConfig";
 
 export let appConfig: AppConfig;
 export let matchState: MatchState;
+export let settingsState: {
+  page: string,
+  setPage: React.Dispatch<React.SetStateAction<string>>,
+};
 
 export function App(): JSX.Element {
   const [darkmode, setDarkmode] = useState(true);
   
   const [outputDir, setOutputDir] = useState("");
 
-  const [liveUpdate, setLiveUpdate] = useState(true);
+  const [liveUpdate, setLiveUpdate] = useState(false);
 
   useEffect(() => {
     window.store.get("ui.darkmode").then((value: boolean) => {
@@ -86,6 +90,10 @@ export function App(): JSX.Element {
     round: round,
     setRound: setRoundCallback,
   };
+
+  const [page, setPage] = useState("ui");
+
+  settingsState = { page: page, setPage: setPage };
 
   return (
     <div className={"app".concat(appConfig.ui.darkmode ? " dark" : "")}>
