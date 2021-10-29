@@ -449,16 +449,6 @@
     "fs-extra" "^10.0.0"
     "which" "^2.0.2"
 
-"@electron-forge/maker-deb@^6.0.0-beta.57":
-  "integrity" "sha512-HrdUWajIA5Vis7WFSjAjzxX3M+fhHU2Di22xEHZEi9Ya+qpJf9U/MQjzf5Etc5tVgAtfcIL5+lFj0/KEdNYu0g=="
-  "resolved" "https://registry.npmjs.org/@electron-forge/maker-deb/-/maker-deb-6.0.0-beta.59.tgz"
-  "version" "6.0.0-beta.59"
-  dependencies:
-    "@electron-forge/maker-base" "6.0.0-beta.59"
-    "@electron-forge/shared-types" "6.0.0-beta.59"
-  optionalDependencies:
-    "electron-installer-debian" "^3.0.0"
-
 "@electron-forge/maker-dmg@^6.0.0-beta.57":
   "integrity" "sha512-BioXpwgYyT9lSiM3Qej6ohbYlAt2VD6IJpZcRL82P3Bn1OZ7x3KYqI1dKuz2UdR7zc3iPycpuVokWu5/+Y7klQ=="
   "resolved" "https://registry.npmjs.org/@electron-forge/maker-dmg/-/maker-dmg-6.0.0-beta.59.tgz"
@@ -493,12 +483,12 @@
     "electron-winstaller" "^5.0.0"
 
 "@electron-forge/maker-zip@^6.0.0-beta.57":
-  "integrity" "sha512-JDRfhuCPIT0k2S2mMKMj4BfcIAvDlMvBHwf2ERp2FbroCdlKnL5taYHNLNlGBldVjNqNuees1S3cQnLh+4rLag=="
-  "resolved" "https://registry.npmjs.org/@electron-forge/maker-zip/-/maker-zip-6.0.0-beta.59.tgz"
-  "version" "6.0.0-beta.59"
+  "integrity" "sha512-rpi+JTVvzrAzjVM4BDgwRZg03NG78ReS3SUprEYB7KN0ePOT5YKqTkcI3Apt+Ud4nFWd5OTryXmFRR1/YiTrwA=="
+  "resolved" "https://registry.npmjs.org/@electron-forge/maker-zip/-/maker-zip-6.0.0-beta.61.tgz"
+  "version" "6.0.0-beta.61"
   dependencies:
-    "@electron-forge/maker-base" "6.0.0-beta.59"
-    "@electron-forge/shared-types" "6.0.0-beta.59"
+    "@electron-forge/maker-base" "6.0.0-beta.61"
+    "@electron-forge/shared-types" "6.0.0-beta.61"
     "cross-zip" "^4.0.0"
     "fs-extra" "^10.0.0"
 
@@ -2295,7 +2285,7 @@
   "resolved" "https://registry.npmjs.org/camelcase/-/camelcase-3.0.0.tgz"
   "version" "3.0.0"
 
-"camelcase@^5.0.0", "camelcase@5.0.0":
+"camelcase@5.0.0":
   "integrity" "sha512-faqwZqnWxbxn+F1d399ygeamQNy3lPp/H9H6rNrqYh4FSVCtcY+3cub1MxA8o9mDd55mM8Aghuu/kuyYA6VTsA=="
   "resolved" "https://registry.npmjs.org/camelcase/-/camelcase-5.0.0.tgz"
   "version" "5.0.0"
@@ -2420,15 +2410,6 @@
     "string-width" "^1.0.1"
     "strip-ansi" "^3.0.1"
     "wrap-ansi" "^2.0.0"
-
-"cliui@^6.0.0":
-  "integrity" "sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ=="
-  "resolved" "https://registry.npmjs.org/cliui/-/cliui-6.0.0.tgz"
-  "version" "6.0.0"
-  dependencies:
-    "string-width" "^4.2.0"
-    "strip-ansi" "^6.0.0"
-    "wrap-ansi" "^6.2.0"
 
 "cliui@^7.0.2":
   "integrity" "sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ=="
@@ -2901,7 +2882,7 @@
   dependencies:
     "ms" "2.0.0"
 
-"decamelize@^1.1.1", "decamelize@^1.1.2", "decamelize@^1.2.0":
+"decamelize@^1.1.1", "decamelize@^1.1.2":
   "integrity" "sha1-9lNNFRSCabIDUue+4m9QH5oZEpA="
   "resolved" "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
   "version" "1.2.0"
@@ -3186,7 +3167,7 @@
     "icon-gen" "^2.0.0"
     "jimp" "^0.16.1"
 
-"electron-installer-common@^0.10.0", "electron-installer-common@^0.10.2":
+"electron-installer-common@^0.10.0":
   "integrity" "sha512-mYbP+6i+nHMIm0WZHXgGdmmXMe+KXncl6jZYQNcCF9C1WsNA9C5SZ2VP4TLQMSIoFO+X4ugkMEA5uld1bmyEvA=="
   "resolved" "https://registry.npmjs.org/electron-installer-common/-/electron-installer-common-0.10.3.tgz"
   "version" "0.10.3"
@@ -3202,20 +3183,6 @@
     "tmp-promise" "^3.0.2"
   optionalDependencies:
     "@types/fs-extra" "^9.0.1"
-
-"electron-installer-debian@^3.0.0":
-  "integrity" "sha512-k6KChvx0Fw8XTlCqwwbBfh19yGQaKjGdbugokmr1IpzINOm4QFyACKMTHAYFHW5LCBUZQShZD96hwxUZ+8Kx+w=="
-  "resolved" "https://registry.npmjs.org/electron-installer-debian/-/electron-installer-debian-3.1.0.tgz"
-  "version" "3.1.0"
-  dependencies:
-    "@malept/cross-spawn-promise" "^1.0.0"
-    "debug" "^4.1.1"
-    "electron-installer-common" "^0.10.2"
-    "fs-extra" "^9.0.0"
-    "get-folder-size" "^2.0.1"
-    "lodash" "^4.17.4"
-    "word-wrap" "^1.2.3"
-    "yargs" "^15.0.1"
 
 "electron-installer-dmg@^3.0.0":
   "integrity" "sha512-a3z9ABUfLJtrLK1ize4j+wJKslodb0kRHgBuUN4GTckiUxtGdo49XCvvAHvQaOqQk3S5VTvuc6PoofnI9mKSCQ=="
@@ -4020,14 +3987,6 @@
     "locate-path" "^5.0.0"
     "path-exists" "^4.0.0"
 
-"find-up@^4.1.0":
-  "integrity" "sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw=="
-  "resolved" "https://registry.npmjs.org/find-up/-/find-up-4.1.0.tgz"
-  "version" "4.1.0"
-  dependencies:
-    "locate-path" "^5.0.0"
-    "path-exists" "^4.0.0"
-
 "find-up@^5.0.0":
   "integrity" "sha512-78/PXT1wlLLDgTzDs7sjq9hzz0vXD+zn+7wypEe4fXQxCmdmqfGsEPQxmiCSQI3ajFV91bVSsvNtrJRiW6nGng=="
   "resolved" "https://registry.npmjs.org/find-up/-/find-up-5.0.0.tgz"
@@ -4236,11 +4195,6 @@
     "flora-colossus" "^1.0.0"
     "fs-extra" "^4.0.0"
 
-"gar@^1.0.4":
-  "integrity" "sha512-w4n9cPWyP7aHxKxYHFQMegj7WIAsL/YX/C4Bs5Rr8s1H9M1rNtRWRsw+ovYMkXDQ5S4ZbYHsHAPmevPjPgw44w=="
-  "resolved" "https://registry.npmjs.org/gar/-/gar-1.0.4.tgz"
-  "version" "1.0.4"
-
 "gauge@~2.7.3":
   "integrity" "sha1-LANAXHU4w51+s3sxcCLjJfsBi/c="
   "resolved" "https://registry.npmjs.org/gauge/-/gauge-2.7.4.tgz"
@@ -4265,18 +4219,10 @@
   "resolved" "https://registry.npmjs.org/get-caller-file/-/get-caller-file-1.0.3.tgz"
   "version" "1.0.3"
 
-"get-caller-file@^2.0.1", "get-caller-file@^2.0.5":
+"get-caller-file@^2.0.5":
   "integrity" "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
   "resolved" "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz"
   "version" "2.0.5"
-
-"get-folder-size@^2.0.1":
-  "integrity" "sha512-+CEb+GDCM7tkOS2wdMKTn9vU7DgnKUTuDlehkNJKNSovdCOVxs14OfKCk4cvSaR3za4gj+OBdl9opPN9xrJ0zA=="
-  "resolved" "https://registry.npmjs.org/get-folder-size/-/get-folder-size-2.0.1.tgz"
-  "version" "2.0.1"
-  dependencies:
-    "gar" "^1.0.4"
-    "tiny-each-async" "2.0.3"
 
 "get-installed-path@^2.0.3":
   "integrity" "sha512-Qkn9eq6tW5/q9BDVdMpB8tOHljX9OSP0jRC5TRNVA4qRc839t4g8KQaR8t0Uv0EFVL0MlyG7m/ofjEgAROtYsA=="
@@ -5607,7 +5553,7 @@
   "resolved" "https://registry.npmjs.org/lodash.truncate/-/lodash.truncate-4.4.2.tgz"
   "version" "4.4.2"
 
-"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21", "lodash@^4.17.4":
+"lodash@^4.17.10", "lodash@^4.17.14", "lodash@^4.17.15", "lodash@^4.17.20", "lodash@^4.17.21":
   "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
   "version" "4.17.21"
@@ -7468,11 +7414,6 @@
   "resolved" "https://registry.npmjs.org/require-main-filename/-/require-main-filename-1.0.1.tgz"
   "version" "1.0.1"
 
-"require-main-filename@^2.0.0":
-  "integrity" "sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg=="
-  "resolved" "https://registry.npmjs.org/require-main-filename/-/require-main-filename-2.0.0.tgz"
-  "version" "2.0.0"
-
 "requires-port@^1.0.0":
   "integrity" "sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8="
   "resolved" "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz"
@@ -8462,11 +8403,6 @@
   "resolved" "https://registry.npmjs.org/timm/-/timm-1.7.1.tgz"
   "version" "1.7.1"
 
-"tiny-each-async@2.0.3":
-  "integrity" "sha1-jru/1tYpXxNwAD+7NxYq/loKUdE="
-  "resolved" "https://registry.npmjs.org/tiny-each-async/-/tiny-each-async-2.0.3.tgz"
-  "version" "2.0.3"
-
 "tiny-invariant@^1.0.2":
   "integrity" "sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw=="
   "resolved" "https://registry.npmjs.org/tiny-invariant/-/tiny-invariant-1.1.0.tgz"
@@ -8954,11 +8890,6 @@
   "resolved" "https://registry.npmjs.org/which-module/-/which-module-1.0.0.tgz"
   "version" "1.0.0"
 
-"which-module@^2.0.0":
-  "integrity" "sha1-2e8H3Od7mQK4o6j6SzHD4/fm6Ho="
-  "resolved" "https://registry.npmjs.org/which-module/-/which-module-2.0.0.tgz"
-  "version" "2.0.0"
-
 "which@^1.2.10":
   "integrity" "sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ=="
   "resolved" "https://registry.npmjs.org/which/-/which-1.3.1.tgz"
@@ -9011,15 +8942,6 @@
   dependencies:
     "string-width" "^1.0.1"
     "strip-ansi" "^3.0.1"
-
-"wrap-ansi@^6.2.0":
-  "integrity" "sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA=="
-  "resolved" "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-6.2.0.tgz"
-  "version" "6.2.0"
-  dependencies:
-    "ansi-styles" "^4.0.0"
-    "string-width" "^4.1.0"
-    "strip-ansi" "^6.0.0"
 
 "wrap-ansi@^7.0.0":
   "integrity" "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q=="
@@ -9110,11 +9032,6 @@
   "resolved" "https://registry.npmjs.org/y18n/-/y18n-3.2.2.tgz"
   "version" "3.2.2"
 
-"y18n@^4.0.0":
-  "integrity" "sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ=="
-  "resolved" "https://registry.npmjs.org/y18n/-/y18n-4.0.3.tgz"
-  "version" "4.0.3"
-
 "y18n@^5.0.5":
   "integrity" "sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA=="
   "resolved" "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz"
@@ -9135,14 +9052,6 @@
   "resolved" "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   "version" "1.10.2"
 
-"yargs-parser@^18.1.2":
-  "integrity" "sha512-o50j0JeToy/4K6OZcaQmW6lyXXKhq7csREXcDwk2omFPJEwUNOVtJKvmDr9EI1fAJZUyZcRF7kxGBWmRXudrCQ=="
-  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-18.1.3.tgz"
-  "version" "18.1.3"
-  dependencies:
-    "camelcase" "^5.0.0"
-    "decamelize" "^1.2.0"
-
 "yargs-parser@^20.0.0", "yargs-parser@^20.2.2":
   "integrity" "sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w=="
   "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
@@ -9154,23 +9063,6 @@
   "version" "4.2.1"
   dependencies:
     "camelcase" "^3.0.0"
-
-"yargs@^15.0.1":
-  "integrity" "sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A=="
-  "resolved" "https://registry.npmjs.org/yargs/-/yargs-15.4.1.tgz"
-  "version" "15.4.1"
-  dependencies:
-    "cliui" "^6.0.0"
-    "decamelize" "^1.2.0"
-    "find-up" "^4.1.0"
-    "get-caller-file" "^2.0.1"
-    "require-directory" "^2.1.1"
-    "require-main-filename" "^2.0.0"
-    "set-blocking" "^2.0.0"
-    "string-width" "^4.2.0"
-    "which-module" "^2.0.0"
-    "y18n" "^4.0.0"
-    "yargs-parser" "^18.1.2"
 
 "yargs@^16.0.0":
   "integrity" "sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw=="

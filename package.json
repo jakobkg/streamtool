@@ -31,7 +31,6 @@
     "@babel/core": "^7.14.6",
     "@babel/preset-react": "^7.14.5",
     "@electron-forge/cli": "^6.0.0-beta.57",
-    "@electron-forge/maker-deb": "^6.0.0-beta.57",
     "@electron-forge/maker-dmg": "^6.0.0-beta.57",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.57",
     "@electron-forge/maker-zip": "^6.0.0-beta.57",
