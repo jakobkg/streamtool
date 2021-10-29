@@ -47,8 +47,8 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Windows artifact
-          path: out/make/*
+          name: Windows build
+          path: out/make/**/*.exe
   
   build-macos:
     name: Build for MacOS
@@ -69,5 +69,5 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Mac artifact
+          name: MacOS build
           path: out/make/*
