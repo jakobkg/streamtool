@@ -3167,7 +3167,7 @@
     "icon-gen" "^2.0.0"
     "jimp" "^0.16.1"
 
-"electron-installer-common@^0.10.0":
+"electron-installer-common@^0.10.0", "electron-installer-common@^0.10.2":
   "integrity" "sha512-mYbP+6i+nHMIm0WZHXgGdmmXMe+KXncl6jZYQNcCF9C1WsNA9C5SZ2VP4TLQMSIoFO+X4ugkMEA5uld1bmyEvA=="
   "resolved" "https://registry.npmjs.org/electron-installer-common/-/electron-installer-common-0.10.3.tgz"
   "version" "0.10.3"
