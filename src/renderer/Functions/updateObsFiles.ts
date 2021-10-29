@@ -1,8 +1,8 @@
 import { matchState } from "../App";
 
 export function updateObsFiles(): void {
-    const fields = document.getElementsByClassName('textbox');
-    let fieldsArray: string[] = [];
+    const fields = document.getElementsByClassName("textbox");
+    const fieldsArray: string[] = [];
 
     for (let index = 0; index < fields.length; index++) {
         const element = fields.item(index) as HTMLInputElement;
