@@ -28,7 +28,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: Windows build
+          name: Linux build
           path: out/make/zip/linux/x64/*.zip
         
   build-windows:
