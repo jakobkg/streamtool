@@ -28,9 +28,6 @@ jobs:
       - name: Build Flatpak package
         run: npm run make:linux
         
-      - name: Look for artifact
-        run: ls out/**/*
-        
   build-windows:
     name: Build for Windows
     runs-on: windows-latest
@@ -47,8 +44,11 @@ jobs:
       - name: Build Windows package
         run: npm run make:win
         
-      - name: Look for artifact
-        run: dir \s\w\o out/
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Windows artifact
+          path: out/make/*
   
   build-macos:
     name: Build for MacOS
@@ -66,5 +66,8 @@ jobs:
       - name: Build MacOS package
         run: npm run make:mac
         
-      - name: Look for artifact
-        run: ls out/**/*
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Mac artifact
+          path: out/make/*
