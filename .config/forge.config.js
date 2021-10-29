@@ -26,9 +26,10 @@ module.exports = {
     },
 
     {
-      name: "@electron-forge/maker-flatpak",
+      name: "@electron-forge/maker-zip",
+      platforms: ['linux'],
       config: {
-        
+
       },
     },
   ],

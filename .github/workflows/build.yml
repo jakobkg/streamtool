@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build-linux:
+    name: Build for Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+
+      - name: Install dependencies
+        run: npm i
+        
+      - name: Build zip package
+        run: npm run make:linux
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Linux build
+          path: out/make/zip/linux/x64/*.zip
+        
+  build-windows:
+    name: Build for Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+          
+      - name: Install dependencies
+        run: npm i
+        
+      - name: Build Windows package
+        run: npm run make:win
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: Windows build
+          path: out/make/squirrel.windows/x64/*.exe
+  
+  build-macos:
+    name: Build for MacOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+          
+      - name: Install dependencies
+        run: npm i
+        
+      - name: Build MacOS package
+        run: npm run make:mac
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: MacOS build
+          path: out/make/*.dmg
