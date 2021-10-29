@@ -15,7 +15,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build-linux:
     name: Build for Linux
     # The type of runner that the job will run on
@@ -35,8 +34,19 @@ jobs:
         
       - name: Install Snapcraft
         uses: samuelmeuli/action-snapcraft@v1
-        with:
-          use_lxd: true
         
       - name: Build Snap package
         run: npm run make:linux
+        
+  build-windows:
+    name: Build for Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm i
+      - name: Build Windows package
+        run: npm run make:win
