@@ -23,7 +23,7 @@ jobs:
         run: npm i
         
       - name: Install Flatpak
-        run: apt install flatpak flatpak-builder elfutils
+        run: sudo apt install flatpak flatpak-builder elfutils
         
       - name: Build Flatpak package
         run: npm run make:linux
