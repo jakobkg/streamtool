@@ -50,3 +50,20 @@ jobs:
         run: npm i
       - name: Build Windows package
         run: npm run make:win
+      - name: Look for artifact
+        run: dir out/
+  
+  build-macos:
+    name: Build for MacOS
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2.4.1
+        with:
+          node-version: 16.x
+      - name: Install dependencies
+        run: npm i
+      - name: Build MacOS package
+        run: npm run make:mac
+      - name: Look for artifact
+        run: ls out/
