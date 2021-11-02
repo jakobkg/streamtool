@@ -1,6 +1,8 @@
 import { app, BrowserWindow } from "electron";
 import isDev from "electron-is-dev";
 import Store from "electron-persist-secure/lib/store";
+import ObsWebSocket from "obs-websocket-js";
+
 import "./app/ipc/main";
 import "./app/ipc/SelectDirectory";
 import "./app/ipc/SaveFile";

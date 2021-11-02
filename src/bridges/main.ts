@@ -5,6 +5,9 @@ import {
   OpenExternalOptions,
 } from "electron";
 import { createStoreBindings } from "electron-persist-secure/lib/bindings";
+import OBSWebSocket from "obs-websocket-js";
+
+export const obs = new OBSWebSocket();
 
 export const electronBridge = {
   quit: (): void => {
@@ -54,3 +57,50 @@ export const storeBridge = createStoreBindings("config");
 contextBridge.exposeInMainWorld("store", {
   ...storeBridge,
 });
+
+export const OBSBridge = {
+  connect: async (address?: string, password?: string): Promise<void> => {
+    return await obs.connect({ address: address, password: password })
+    .then(() => { return; })
+    .catch((err) => {
+      console.error("Couldn't connect:", err);
+    });
+  },
+
+  disconnect: (): void => {
+    return obs.disconnect();
+  },
+
+  isLive: async (): Promise<boolean> => {
+    return await obs.send("GetStreamingStatus")
+    .then((response) => {
+      return response.streaming;
+    }).catch(() => {
+      return false;
+    });
+  },
+
+  getScenes: async (): Promise<OBSWebSocket.Scene[]> => {
+    return await obs.send("GetSceneList")
+    .then((response) => {
+      return response.scenes;
+    }).catch(() => {
+      return [];
+    });
+  },
+
+  setScene: async (sceneName: string): Promise<void> => {
+    return void await obs.send("SetCurrentScene", { "scene-name": sceneName });
+  },
+
+  getSceneItems: async (sceneName: string) => {
+    return await obs.send("GetSceneItemList", {sceneName: sceneName})
+    .then((response) => {
+      return response.sceneItems;
+    }).catch(() => {
+      return [];
+    });
+  }
+};
+
+contextBridge.exposeInMainWorld("obs", OBSBridge);
