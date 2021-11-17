@@ -2,6 +2,9 @@
     .button {
         @apply rounded-md px-1
         hover:bg-gray-400
+        dark:hover:bg-gray-400
+        text-center
+        font-bold
         transition-all
         cursor-pointer;
     }

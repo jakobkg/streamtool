@@ -5,7 +5,7 @@
     }
 
     .settings-page {
-        @apply fixed left-16 pl-3 w-full;
+        @apply pl-14;
     }
 
     .settings-entry {

@@ -1,7 +1,8 @@
 import { app, BrowserWindow } from "electron";
 import isDev from "electron-is-dev";
 import Store from "electron-persist-secure/lib/store";
-import ObsWebSocket from "obs-websocket-js";
+
+import { obs } from "./bridges/main";
 
 import "./app/ipc/main";
 import "./app/ipc/SelectDirectory";
@@ -24,8 +25,8 @@ const createStores = (): void => {
 
 const createWindow = (): void => {
   const mainWindow = new BrowserWindow({
-    height: 420,
-    width: 1280,
+    height: 320,
+    width: 1050,
     autoHideMenuBar: true,
     webPreferences: {
       devTools: isDev,
@@ -36,7 +37,6 @@ const createWindow = (): void => {
   });
 
   void mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-  
 };
 
 app.on("ready", () => {

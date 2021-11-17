@@ -22,6 +22,14 @@ export function App(): JSX.Element {
 
   const [liveUpdate, setLiveUpdate] = useState(false);
 
+  const [WSAddress, setWSAddress] = useState("localhost");
+
+  const [WSPort, setWSPort] = useState("4444");
+
+  const [WSPassword, setWSPassword] = useState("");
+
+  const [scenes, setScenes] = useState([]);
+
   useEffect(() => {
     window.store.get("ui.darkmode").then((value: boolean) => {
       setDarkmode(value);
@@ -54,10 +62,20 @@ export function App(): JSX.Element {
       setOutputDir: configCallbackBuilder(setOutputDir, "obs.outputDir"),
       liveUpdate: liveUpdate,
       setLiveUpdate: configCallbackBuilder(setLiveUpdate, "obs.liveUpdate"),
+      websocket: {
+        address: WSAddress,
+        setAddress: configCallbackBuilder(setWSAddress, "obs.websocket.address"),
+        port: WSPort,
+        setPort: configCallbackBuilder(setWSPort, "obs.websocket.port"),
+        password: WSPassword,
+        setPassword: configCallbackBuilder(setWSPassword, "obs.websocket.password"),
+        scenes: scenes,
+        setScenes: configCallbackBuilder(setScenes, "obs.websocket.scenes"),
+      }
     }
   };
 
-  const [view, setView] = useState("scoreboard");
+  const [view, setView] = useState("settings");
   
   const [p1Team, setP1Team] = useState("");
   const setP1TeamCallback = stateCallbackBuilder(setP1Team, appConfig.obs.outputDir.concat("/team1.txt"));
@@ -91,7 +109,7 @@ export function App(): JSX.Element {
     setRound: setRoundCallback,
   };
 
-  const [page, setPage] = useState("ui");
+  const [page, setPage] = useState("obs");
 
   settingsState = { page: page, setPage: setPage };
 

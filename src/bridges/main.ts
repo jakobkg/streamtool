@@ -71,6 +71,16 @@ export const OBSBridge = {
     return obs.disconnect();
   },
 
+  isConnected: async (): Promise<boolean> => {
+    return await obs.send("GetCurrentScene")
+    .then(() => {
+      return true;
+    })
+    .catch(() => {
+      return false;
+    })
+  },
+
   isLive: async (): Promise<boolean> => {
     return await obs.send("GetStreamingStatus")
     .then((response) => {
@@ -80,10 +90,14 @@ export const OBSBridge = {
     });
   },
 
-  getScenes: async (): Promise<OBSWebSocket.Scene[]> => {
+  getScenes: async (): Promise<string[]> => {
     return await obs.send("GetSceneList")
     .then((response) => {
-      return response.scenes;
+      const returnbuffer: string[] = [];
+      response.scenes.forEach((scene) => {
+        returnbuffer.push(scene.name);
+      })
+      return returnbuffer;
     }).catch(() => {
       return [];
     });
@@ -103,4 +117,4 @@ export const OBSBridge = {
   }
 };
 
-contextBridge.exposeInMainWorld("obs", OBSBridge);
+contextBridge.exposeInMainWorld("obs", {...OBSBridge,});
