@@ -37,7 +37,7 @@ export function ScoreboardView({ matchState, appConfig }: ScoreboardViewProps): 
             <div className="absolute bottom-6 flex flex-row gap-3">
                 {(appConfig.obs.websocket.scenes.length != 0 ? "Scenes: " : "")}
                 {appConfig.obs.websocket.scenes.map((value) => (
-                    <div className="button dark:bg-gray-500 bg-gray-300" onClick={() => { window.obs.setScene(value); }} >{value}</div>
+                    <div className="button dark:bg-gray-500 bg-gray-300" onClick={() => { void window.obs.setScene(value); }} >{value}</div>
                 ))}
             </div>
         </div>

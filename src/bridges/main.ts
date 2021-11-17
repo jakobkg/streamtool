@@ -60,7 +60,7 @@ contextBridge.exposeInMainWorld("store", {
 
 export const OBSBridge = {
   connect: async (address?: string, password?: string): Promise<void> => {
-    return await obs.connect({ address: address, password: password })
+    return obs.connect({ address: address, password: password })
     .then(() => { return; })
     .catch((err) => {
       console.error("Couldn't connect:", err);
@@ -72,17 +72,17 @@ export const OBSBridge = {
   },
 
   isConnected: async (): Promise<boolean> => {
-    return await obs.send("GetCurrentScene")
+    return obs.send("GetCurrentScene")
     .then(() => {
       return true;
     })
     .catch(() => {
       return false;
-    })
+    });
   },
 
   isLive: async (): Promise<boolean> => {
-    return await obs.send("GetStreamingStatus")
+    return obs.send("GetStreamingStatus")
     .then((response) => {
       return response.streaming;
     }).catch(() => {
@@ -91,12 +91,12 @@ export const OBSBridge = {
   },
 
   getScenes: async (): Promise<string[]> => {
-    return await obs.send("GetSceneList")
+    return obs.send("GetSceneList")
     .then((response) => {
       const returnbuffer: string[] = [];
       response.scenes.forEach((scene) => {
         returnbuffer.push(scene.name);
-      })
+      });
       return returnbuffer;
     }).catch(() => {
       return [];
@@ -108,7 +108,7 @@ export const OBSBridge = {
   },
 
   getSceneItems: async (sceneName: string) => {
-    return await obs.send("GetSceneItemList", {sceneName: sceneName})
+    return obs.send("GetSceneItemList", { sceneName: sceneName })
     .then((response) => {
       return response.sceneItems;
     }).catch(() => {
@@ -117,4 +117,4 @@ export const OBSBridge = {
   }
 };
 
-contextBridge.exposeInMainWorld("obs", {...OBSBridge,});
+contextBridge.exposeInMainWorld("obs", { ...OBSBridge, });

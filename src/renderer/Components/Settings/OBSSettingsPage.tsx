@@ -24,11 +24,15 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
                 <div className="button bg-gray-300 dark:bg-gray-500" onClick={() => { 
                     window.obs.connect(config.obs.websocket.address.concat(":", config.obs.websocket.port))
                     .then(() => {
-                        window.obs.getScenes()
-                        .then((scenes: string[]) => {
-                            config.obs.websocket.setScenes(scenes);
-                        })
-                    })}
+                        return window.obs.getScenes();
+                    })
+                    .then((scenes: string[]) => {
+                        config.obs.websocket.setScenes(scenes);
+                    })
+                    .catch(() => {
+                        return;
+                    })
+                    ;}
                 }>
                     Connect to OBS
                 </div>
