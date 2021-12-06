@@ -114,6 +114,25 @@ export const OBSBridge = {
     }).catch(() => {
       return [];
     });
+  },
+
+  getTextSources: async (): Promise<string[]> => {
+    return obs.send("GetSourcesList")
+    .then((value) => {
+      const returnBuffer: string[] = [];
+      value.sources.forEach((source) => {
+        if (source.typeId.startsWith("text")) {
+          returnBuffer.push(source.name);
+        }
+      })
+      return returnBuffer;
+    }).catch(() => {
+      return [];
+    })
+  },
+
+  setTextSourceContents: async (sourceName: string, contents: string): Promise<void> => {
+    obs.send("SetSourceSettings", {sourceName: sourceName, sourceSettings: {text: contents}});
   }
 };
 
