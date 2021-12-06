@@ -15,9 +15,9 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
             <h2>Websocket:</h2>
             
             <div className="grid grid-cols-3 grid-rows-1 gap-4 pb-3">
-                <Textfield data={config.obs.websocket.address} setterCallback={config.obs.websocket.setAddress} description="OBS websocket address" />
-                <Textfield data={config.obs.websocket.port} setterCallback={config.obs.websocket.setPort} description="OBS websocket port" />
-                <Textfield data={config.obs.websocket.password} setterCallback={config.obs.websocket.setPassword} description="OBS websocket password" />
+                <Textfield data={config.obs.websocket.address} setterCallback={config.obs.websocket.setAddress} description="Address" />
+                <Textfield data={config.obs.websocket.port} setterCallback={config.obs.websocket.setPort} description="Port" />
+                <Textfield data={config.obs.websocket.password} setterCallback={config.obs.websocket.setPassword} description="Password" />
             </div>
 
             <div className="grid grid-cols-3 gap-4 pb-3">
@@ -29,10 +29,8 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
                     .then((scenes: string[]) => {
                         config.obs.websocket.setScenes(scenes);
                     })
-                    .catch(() => {
-                        return;
-                    })
-                    ;}
+                    .catch(() => { return; });
+                    }
                 }>
                     Connect to OBS
                 </div>

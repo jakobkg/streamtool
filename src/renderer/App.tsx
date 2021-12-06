@@ -75,7 +75,7 @@ export function App(): JSX.Element {
     }
   };
 
-  const [view, setView] = useState("settings");
+  const [view, setView] = useState("scoreboard");
   
   const [p1Team, setP1Team] = useState("");
   const setP1TeamCallback = stateCallbackBuilder(setP1Team, appConfig.obs.outputDir.concat("/team1.txt"));
@@ -109,7 +109,7 @@ export function App(): JSX.Element {
     setRound: setRoundCallback,
   };
 
-  const [page, setPage] = useState("obs");
+  const [page, setPage] = useState("ui");
 
   settingsState = { page: page, setPage: setPage };
 
