@@ -40,7 +40,7 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
             <h2>Legacy:</h2>
 
             <div className="grid grid-cols-2 grid-rows-1 gap-4">
-                <BooleanSetting name="Scoreboard Assistant mode" value={config.obs.liveUpdate} setValueCallback={config.obs.setLiveUpdate} />
+                <BooleanSetting name="Scoreboard Assistant mode" value={config.obs.legacyMode} setValueCallback={config.obs.setLegacyMode} />
                 <PathSetting name="Output dir" value={config.obs.outputDir} setValueCallback={config.obs.setOutputDir} />
             </div>
         </div>

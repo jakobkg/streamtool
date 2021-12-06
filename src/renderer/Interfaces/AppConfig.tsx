@@ -6,8 +6,8 @@ export interface AppConfig {
     obs: {
         outputDir: string;
         setOutputDir: (value: string) => void;
-        liveUpdate: boolean;
-        setLiveUpdate: (value: boolean) => void;
+        legacyMode: boolean;
+        setLegacyMode: (value: boolean) => void;
         websocket: {
             address: string;
             setAddress: (value: string) => void;
@@ -17,6 +17,18 @@ export interface AppConfig {
             setPassword: (value: string) => void;
             scenes: string[];
             setScenes: (value: string[]) => void;
+            sourceNames: {
+                p1Tag: string;
+                p2Tag: string;
+
+                p1Team: string;
+                p2Team: string;
+
+                p1Score: string;
+                p2Score: string;
+
+                round: string;
+            }
         }
     }
 }

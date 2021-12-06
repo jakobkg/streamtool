@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import { configCallbackBuilder } from "./Functions/configCallbackBuilder";
-import { stateCallbackBuilder } from "./Functions/stateCallbackBuilder";
 
 import { AppView } from "./Components/Common/AppView";
 import { ButtonModule } from "./Components/Common/ButtonModule";
@@ -20,7 +19,7 @@ export function App(): JSX.Element {
   
   const [outputDir, setOutputDir] = useState("");
 
-  const [liveUpdate, setLiveUpdate] = useState(false);
+  const [legacyMode, setLegacyMode] = useState(false);
 
   const [WSAddress, setWSAddress] = useState("localhost");
 
@@ -48,7 +47,7 @@ export function App(): JSX.Element {
 
   useEffect(() => {
     window.store.get("obs.liveUpdate").then((value: boolean) => {
-      setLiveUpdate(value);
+      setLegacyMode(value);
     }).catch(() => {return;});
   }, []);
 
@@ -60,8 +59,8 @@ export function App(): JSX.Element {
     obs: {
       outputDir: outputDir,
       setOutputDir: configCallbackBuilder(setOutputDir, "obs.outputDir"),
-      liveUpdate: liveUpdate,
-      setLiveUpdate: configCallbackBuilder(setLiveUpdate, "obs.liveUpdate"),
+      legacyMode: legacyMode,
+      setLegacyMode: configCallbackBuilder(setLegacyMode, "obs.liveUpdate"),
       websocket: {
         address: WSAddress,
         setAddress: configCallbackBuilder(setWSAddress, "obs.websocket.address"),
@@ -71,6 +70,18 @@ export function App(): JSX.Element {
         setPassword: configCallbackBuilder(setWSPassword, "obs.websocket.password"),
         scenes: scenes,
         setScenes: configCallbackBuilder(setScenes, "obs.websocket.scenes"),
+        sourceNames: {
+          p1Tag: "",
+          p2Tag: "",
+
+          p1Team: "",
+          p2Team: "",
+
+          p1Score: "",
+          p2Score: "",
+
+          round: "",
+        },
       }
     }
   };
@@ -78,35 +89,27 @@ export function App(): JSX.Element {
   const [view, setView] = useState("scoreboard");
   
   const [p1Team, setP1Team] = useState("");
-  const setP1TeamCallback = stateCallbackBuilder(setP1Team, appConfig.obs.outputDir.concat("/team1.txt"));
   const [p1Tag, setP1Tag] = useState("");
-  const setP1TagCallback = stateCallbackBuilder(setP1Tag, appConfig.obs.outputDir.concat("/player1.txt"));
   const [p1Score, setP1Score] = useState(0);
-  const setP1ScoreCallback = stateCallbackBuilder(setP1Score, appConfig.obs.outputDir.concat("/score1.txt"));
 
   const [p2Team, setP2Team] = useState("");
-  const setP2TeamCallback = stateCallbackBuilder(setP2Team, appConfig.obs.outputDir.concat("/team2.txt"));
   const [p2Tag, setP2Tag] = useState("");
-  const setP2TagCallback = stateCallbackBuilder(setP2Tag, appConfig.obs.outputDir.concat("/player2.txt"));
   const [p2Score, setP2Score] = useState(0);
-  const setP2ScoreCallback = stateCallbackBuilder(setP2Score, appConfig.obs.outputDir.concat("/score2.txt"));
 
   const [matchLength, setMatchLength] = useState(3);
-  const setMatchLengthCallback = stateCallbackBuilder(setMatchLength, appConfig.obs.outputDir.concat("/bestof.txt"));
   const [round, setRound] = useState("");
-  const setRoundCallback = stateCallbackBuilder(setRound, appConfig.obs.outputDir.concat("/round.txt"));
 
   matchState = {
     teams: [p1Team, p2Team],
-    setTeams: [setP1TeamCallback, setP2TeamCallback],
+    setTeams: [setP1Team, setP2Team],
     tags: [p1Tag, p2Tag],
-    setTags: [setP1TagCallback, setP2TagCallback],
+    setTags: [setP1Tag, setP2Tag],
     scores: [p1Score, p2Score],
-    setScores: [setP1ScoreCallback, setP2ScoreCallback],
+    setScores: [setP1Score, setP2Score],
     matchLength: matchLength,
-    setMatchLength: setMatchLengthCallback,
+    setMatchLength: setMatchLength,
     round: round,
-    setRound: setRoundCallback,
+    setRound: setRound,
   };
 
   const [page, setPage] = useState("ui");
