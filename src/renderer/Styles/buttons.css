@@ -3,10 +3,15 @@
         @apply rounded-md px-1
         hover:bg-gray-400
         dark:hover:bg-gray-400
+        shadow-md
         text-center
         font-bold
         transition-all
         cursor-pointer;
+    }
+
+    .score {
+        @apply h-20 shadow-none;
     }
 
     .icon-button {

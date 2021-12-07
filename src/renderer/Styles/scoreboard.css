@@ -7,10 +7,6 @@
         @apply flex flex-row;
     }
 
-    .score {
-        @apply active:bg-green-500 h-20;
-    }
-
     .scoreboardcontrolpanel {
         @apply text-sm flex flex-col justify-around w-full font-bold text-center;
     }

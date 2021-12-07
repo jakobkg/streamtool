@@ -21,13 +21,13 @@ export function updateObsData(): void {
                 window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p1Score, String(matchState.scores[0]));
                 window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p2Score, String(matchState.scores[1]));
 
-                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p1Tag, String(matchState.tags[0]));
-                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p2Tag, String(matchState.tags[1]));
+                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p1Tag, matchState.tags[0]);
+                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p2Tag, matchState.tags[1]);
 
-                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p1Team, String(matchState.teams[0]));
-                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p2Team, String(matchState.teams[1]));
+                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p1Team, matchState.teams[0]);
+                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.p2Team, matchState.teams[1]);
 
-                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.round, String(matchState.round));
+                window.obs.setTextSourceContents(appConfig.obs.websocket.sourceNames.round, matchState.round);
 
                 return;
             }

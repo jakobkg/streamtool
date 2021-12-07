@@ -11,7 +11,7 @@ interface ScoreboardViewProps {
 
 export function ScoreboardView({ matchState, appConfig }: ScoreboardViewProps): JSX.Element {
     return (
-        <div className="appview-container" onKeyPress={(event) => {
+        <div className="appview-container pl-6" onKeyPress={(event) => {
             if (event.key == "Enter") {
                 updateObsData();
             }
@@ -34,8 +34,8 @@ export function ScoreboardView({ matchState, appConfig }: ScoreboardViewProps): 
             <Scoreboard matchState={matchState} />
             
             <div className="absolute bottom-6 flex flex-row gap-3">
-                {(appConfig.obs.websocket.scenes.length != 0 ? "Scenes: " : "")}
-                {appConfig.obs.websocket.scenes.map((value) => (
+                {(appConfig.obs.websocket.scenelist.length != 0 ? "Scenes: " : "")}
+                {appConfig.obs.websocket.scenelist.map((value) => (
                     <div className="button dark:bg-gray-500 bg-gray-300" onClick={() => { void window.obs.setScene(value); }} >{value}</div>
                 ))}
             </div>

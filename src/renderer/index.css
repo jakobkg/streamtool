@@ -13,12 +13,12 @@
     }
 
     .appview-container {
-        @apply fixed h-screen w-screen p-6
+        @apply fixed h-screen w-screen p-3
         bg-gray-100 text-black dark:bg-gray-700 dark:text-white;
     }
 
     .button-module-container {
-        @apply fixed top-0 right-0 h-16 w-16 rounded-bl-lg
+        @apply fixed top-0 left-0 h-16 w-16 rounded-br-lg
         bg-gray-300 dark:bg-gray-800 shadow-lg;
     }
 

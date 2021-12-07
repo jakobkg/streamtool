@@ -1,6 +1,8 @@
+import { appConfig } from "@/renderer/App";
 import { AppConfig } from "@interfaces/AppConfig";
 import { Textfield } from "../Common/Textfield";
 import { BooleanSetting } from "./BooleanSetting";
+import { DropdownSetting } from "./DropdownSetting";
 import { PathSetting } from "./PathSetting";
 
 interface OBSSettingsPageProps {
@@ -23,12 +25,8 @@ export function OBSSettingsPage({ config }: OBSSettingsPageProps): JSX.Element {
             <div className="grid grid-cols-3 gap-4 pb-3">
                 <div className="button bg-gray-300 dark:bg-gray-500" onClick={() => { 
                     window.obs.connect(config.obs.websocket.address.concat(":", config.obs.websocket.port))
-                    .then(() => {
-                        return window.obs.getScenes();
-                    })
-                    .then((scenes: string[]) => {
-                        config.obs.websocket.setScenes(scenes);
-                    })
+                    .then(() => { return window.obs.getScenes(); })
+                    .then((scenes: string[]) => { config.obs.websocket.setScenelist(scenes); })
                     .catch(() => { return; });
                     }
                 }>
