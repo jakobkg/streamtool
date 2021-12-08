@@ -90,6 +90,7 @@ export function App(): JSX.Element {
                     setP1Tag: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p1Tag"),
 
                     p2Tag: p2TagSource,
+<<<<<<< HEAD
                     setP2Tag: configCallbackBuilder(setP2TagSource, "obs.websocket.sourceName.p2Tag"),
 
                     p1Team: p1TeamSource,
@@ -106,6 +107,24 @@ export function App(): JSX.Element {
 
                     round: roundSource,
                     setRound: configCallbackBuilder(setRoundSource, "obs.websocket.sourceName.round"),
+=======
+                    setP2Tag: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p2Tag"),
+
+                    p1Team: p1TeamSource,
+                    setP1Team: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p1Team"),
+
+                    p2Team: p2TeamSource,
+                    setP2Team: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p2Team"),
+
+                    p1Score: p1ScoreSource,
+                    setP1Score: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p1Score"),
+
+                    p2Score: p2ScoreSource,
+                    setP2Score: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.p2Score"),
+
+                    round: roundSource,
+                    setRound: configCallbackBuilder(setP1TagSource, "obs.websocket.sourceName.round"),
+>>>>>>> cb1e0b45326a5f5910bf6200921349475ca12a63
                 },
             }
         }
